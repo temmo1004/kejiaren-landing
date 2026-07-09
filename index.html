@@ -5,31 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>客＋人 · LINE．蝦皮 客服 AI｜答不出，不亂編</title>
 <meta name="description" content="客＋人讀懂你的商品、價格和規則，替你寫好每一則客服回覆。它不確定的事會老實標出來交回給你——不會替你的店亂承諾。LINE 官方帳號、蝦皮賣場都能用。">
-<meta name="theme-color" content="#0E3B24">
+<meta name="theme-color" content="#0E3B26">
 <meta property="og:type" content="website">
 <meta property="og:title" content="客＋人 · 客服 AI｜答不出，不亂編">
 <meta property="og:description" content="回覆訊息，AI 先擬好草稿。資料裡沒有的，它標「留給你」——不會替你的店亂承諾。">
 <meta property="og:site_name" content="客＋人">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%23157A46'/%3E%3Ccircle cx='15' cy='22' r='3.2' fill='%23fff'/%3E%3Ccircle cx='25' cy='22' r='3.2' fill='%23fff'/%3E%3Ccircle cx='14' cy='33' r='2.2' fill='%23B7E389'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%2317734A'/%3E%3Ccircle cx='15' cy='22' r='3.2' fill='%23fff'/%3E%3Ccircle cx='25' cy='22' r='3.2' fill='%23fff'/%3E%3Ccircle cx='14' cy='33' r='2.2' fill='%23C9E86F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Chocolate+Classical+Sans&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#F2EFE6; --paper:#FFFFFF; --ink:#1A2B20; --mut:#66735F; --line:#E3E0D2;
-    --brand:#157A46; --brand-dk:#0E5C33; --deep:#0E3B24; --lime:#B7E389; --lime-dk:#7FB84E;
-    --cream:#F7F0DC; --gold-ink:#6B5619;
+    --bg:#F1EFE4; --paper:#FFFFFF; --ink:#1C2B22; --mut:#6B685C; --line:#E3DECE;
+    --brand:#17734A; --brand-dk:#0E4A2E; --deep:#0E3B26; --lime:#C9E86F; --lime-dk:#7FB84E;
+    --cream:#F7F0DC; --gold-ink:#9A6B12;
     --shadow:0 1px 2px rgba(14,59,36,.06),0 10px 34px rgba(14,59,36,.08);
     --shadow-hi:0 8px 20px rgba(14,59,36,.22),0 26px 60px rgba(14,59,36,.24);
-    --sans:"PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;
+    --sans:"Noto Sans TC","PingFang TC",system-ui,sans-serif; --disp:"Chocolate Classical Sans","Noto Sans TC",sans-serif;
     --wrap:1120px;
   }
   @media(prefers-color-scheme:dark){:root{--bg:#101710;--paper:#182118;--ink:#EAF1E6;--mut:#93A392;--line:#26332A;--cream:#25301E;--gold-ink:#D8C68A;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.35);--shadow-hi:0 8px 20px rgba(0,0,0,.5),0 26px 60px rgba(0,0,0,.5)}}
-  :root[data-theme="light"]{--bg:#F2EFE6;--paper:#FFF;--ink:#1A2B20;--mut:#66735F;--line:#E3E0D2;--cream:#F7F0DC;--gold-ink:#6B5619}
+  :root[data-theme="light"]{--bg:#F1EFE4;--paper:#FFF;--ink:#1C2B22;--mut:#6B685C;--line:#E3DECE;--cream:#F7F0DC;--gold-ink:#9A6B12}
   :root[data-theme="dark"]{--bg:#101710;--paper:#182118;--ink:#EAF1E6;--mut:#93A392;--line:#26332A;--cream:#25301E;--gold-ink:#D8C68A;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.35);--shadow-hi:0 8px 20px rgba(0,0,0,.5),0 26px 60px rgba(0,0,0,.5)}
   *{box-sizing:border-box;margin:0} html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
   section{padding:64px 0}
   .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--brand);text-transform:uppercase;text-align:center}
-  h2{font-size:clamp(24px,3.6vw,34px);font-weight:850;text-align:center;text-wrap:balance;letter-spacing:.01em}
+  h2{font-family:var(--disp);font-size:clamp(24px,3.6vw,34px);font-weight:850;text-align:center;text-wrap:balance;letter-spacing:.01em}
   .sec-lede{text-align:center;color:var(--mut);max-width:52ch;margin:12px auto 0;font-size:15px}
   .logo{display:inline-flex;width:34px;height:34px;flex:none}
   nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
@@ -42,7 +45,7 @@
   .hero{text-align:center;padding:74px 0 30px}
   .hero .pill{display:inline-block;background:color-mix(in srgb,var(--lime) 32%,var(--bg));color:var(--brand-dk);border:1px solid color-mix(in srgb,var(--lime) 60%,var(--line));font-size:13px;font-weight:800;padding:7px 18px;border-radius:999px}
   @media(prefers-color-scheme:dark){.hero .pill{color:var(--lime)}}
-  .hero h1{font-size:clamp(34px,6.4vw,60px);font-weight:900;letter-spacing:.005em;line-height:1.18;margin-top:22px;text-wrap:balance}
+  .hero h1{font-family:var(--disp);font-size:clamp(34px,6.4vw,58px);font-weight:900;letter-spacing:.005em;line-height:1.18;margin-top:22px;text-wrap:balance}
   .hero h1 .hl{color:var(--brand)}
   .hero p{font-size:clamp(15px,2.2vw,18.5px);color:var(--ink);opacity:.82;max-width:50ch;margin:20px auto 0}
   .cbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
@@ -119,7 +122,7 @@
 <body>
 
 <svg width="0" height="0" style="position:absolute"><defs>
-<g id="kmark"><rect width="40" height="40" rx="11" fill="#157A46"/><circle cx="15" cy="22" r="3.2" fill="#fff"/><circle cx="25" cy="22" r="3.2" fill="#fff"/><circle cx="14" cy="33" r="2.2" fill="#B7E389"/></g>
+<g id="kmark"><rect width="40" height="40" rx="11" fill="#17734A"/><circle cx="15" cy="22" r="3.2" fill="#fff"/><circle cx="25" cy="22" r="3.2" fill="#fff"/><circle cx="14" cy="33" r="2.2" fill="#C9E86F"/></g>
 </defs></svg>
 
 <nav><div class="nav-in">

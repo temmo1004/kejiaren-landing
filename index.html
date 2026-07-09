@@ -291,6 +291,18 @@
     document.querySelectorAll('a.buy').forEach(function(a){a.href=yr?a.dataset.y:a.dataset.m;});
   }
   document.getElementById('installBtn').addEventListener('click',function(e){e.preventDefault();alert('上架審核中——正式 Chrome 商店連結核准後接上');});
+  // 從擴充帶 #pay=<email> 進來:鎖定結帳 Email(付款頁用同一個才自動開通),自動複製+置頂橫幅
+  (function(){
+    var m=(location.hash||'').match(/pay=([^&]+)/); if(!m) return;
+    var email; try{ email=decodeURIComponent(m[1]); }catch(_){ email=m[1]; }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return;   // 只接受像 email 的,擋亂帶
+    try{ navigator.clipboard.writeText(email); }catch(_){}
+    var b=document.createElement('div');
+    b.style.cssText='position:sticky;top:0;z-index:99;background:#17734A;color:#fff;padding:12px 16px;text-align:center;font-size:14px;line-height:1.5';
+    b.innerHTML='🔑 結帳請用你的帳號 Email：<b>'+email.replace(/[<>&]/g,'')+'</b>（已複製，付款頁貼上即可自動開通）';
+    document.body.insertBefore(b,document.body.firstChild);
+    var p=document.getElementById('pricing'); if(p) p.scrollIntoView({behavior:'smooth'});
+  })();
 </script>
 </body>
 </html>

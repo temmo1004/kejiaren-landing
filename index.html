@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>客＋人 · LINE．蝦皮 客服 AI｜答不出不亂編</title>
+<meta name="description" content="掃一次過去對話，AI 就學會你的店怎麼回客人。答得出的照你口吻回，答不出的絕不瞎掰——不報錯價、不亂承諾。LINE 官方帳號、蝦皮賣場都能用。">
+<meta name="theme-color" content="#2E5540">
+<meta property="og:type" content="website">
+<meta property="og:title" content="客＋人 · 客服 AI｜答不出不亂編">
+<meta property="og:description" content="掃一次對話 AI 就學會你的店。答不出的不瞎掰、不報錯價、不亂承諾。LINE、蝦皮都能用。">
+<meta property="og:site_name" content="客＋人">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%232E5540'/%3E%3Ccircle cx='16' cy='18' r='3' fill='%23fff'/%3E%3Ccircle cx='24' cy='18' r='3' fill='%23fff'/%3E%3Cpath d='M12 25c2-2.5 5-2.5 7 0M21 25c2-2.5 5-2.5 7 0' stroke='%23fff' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#F3F5F0; --paper:#FFF; --ink:#14201A; --mut:#5E6E63; --line:#E1E8E1;
+    --green:#599D65; --green-dk:#2E5540; --green-mid:#3E6B4E; --pale:#E9F1EA; --gold:#C89B3C;
+    --rose:#B2503F;
+    --shadow:0 1px 2px rgba(20,32,26,.05),0 8px 30px rgba(20,32,26,.07);
+    --shadow-hi:0 6px 16px rgba(46,85,64,.18),0 22px 54px rgba(46,85,64,.22);
+    --sans:"PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;
+    --wrap:1080px;
+  }
+  @media(prefers-color-scheme:dark){:root{--bg:#0F150E;--paper:#171F17;--ink:#E8EFE6;--mut:#93A598;--line:#25322A;--pale:#1B291F;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 30px rgba(0,0,0,.35);--shadow-hi:0 6px 16px rgba(0,0,0,.5),0 22px 54px rgba(0,0,0,.55)}}
+  :root[data-theme="light"]{--bg:#F3F5F0;--paper:#FFF;--ink:#14201A;--mut:#5E6E63;--line:#E1E8E1;--pale:#E9F1EA}
+  :root[data-theme="dark"]{--bg:#0F150E;--paper:#171F17;--ink:#E8EFE6;--mut:#93A598;--line:#25322A;--pale:#1B291F;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 30px rgba(0,0,0,.35);--shadow-hi:0 6px 16px rgba(0,0,0,.5),0 22px 54px rgba(0,0,0,.55)}
+  *{box-sizing:border-box;margin:0} html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+  section{padding:56px 0}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--green);text-transform:uppercase;text-align:center}
+  h2{font-size:clamp(22px,3.5vw,30px);font-weight:800;text-align:center;color:var(--green-dk);text-wrap:balance;margin-top:6px}
+  @media(prefers-color-scheme:dark){h2,.faq h2{color:var(--ink)}}
+  .sec-lede{text-align:center;color:var(--mut);max-width:56ch;margin:10px auto 0;font-size:15px}
+  nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:var(--wrap);margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:12px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.04em;color:var(--green-dk)}
+  @media(prefers-color-scheme:dark){.brand{color:var(--ink)}}
+  .brand svg{width:30px;height:30px}
+  .nav-in .sp{flex:1}
+  .nav-in a{color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:700;opacity:.8}
+  .nav-in a.btn{background:var(--green);color:#fff;padding:8px 15px;border-radius:10px;opacity:1}
+  @media(max-width:560px){.nav-in a.plain{display:none}}
+  .hero{text-align:center;padding:60px 0 40px}
+  .hero h1{font-size:clamp(30px,6vw,52px);font-weight:850;letter-spacing:-.01em;color:var(--green-dk);text-wrap:balance;line-height:1.2}
+  @media(prefers-color-scheme:dark){.hero h1{color:var(--ink)}}
+  .hero h1 .hl{color:var(--green)}
+  .hero p{font-size:clamp(15px,2.2vw,18px);color:var(--ink);opacity:.85;max-width:54ch;margin:18px auto 0}
+  .hero .cbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+  .bigcta{background:var(--green);color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:13px 26px;border-radius:12px;box-shadow:var(--shadow-hi);transition:.15s}
+  .bigcta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .bigcta.sec{background:var(--paper);color:var(--green-dk);box-shadow:var(--shadow);border:1px solid var(--line)}
+  .trust{display:flex;gap:8px 22px;justify-content:center;flex-wrap:wrap;margin-top:26px;font-size:13px;color:var(--mut);font-weight:600}
+  .trust b{color:var(--green-dk)} @media(prefers-color-scheme:dark){.trust b{color:var(--green)}}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  @media(max-width:760px){.grid3{grid-template-columns:1fr}}
+  .pain{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .pain .ic{font-size:24px} .pain h3{font-size:15.5px;font-weight:800;margin:8px 0 4px} .pain p{font-size:13.5px;color:var(--mut)}
+  .versus{background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);margin-top:30px}
+  .vrow{display:grid;grid-template-columns:1.1fr 1fr 1fr;border-bottom:1px solid var(--line)}
+  .vrow:last-child{border-bottom:0}
+  .vrow>div{padding:15px 18px;font-size:13.5px;display:flex;align-items:center}
+  .vrow .vh{font-weight:800;font-size:13px}
+  .vrow .head{background:var(--pale)}
+  .vrow .us{background:color-mix(in srgb,var(--green) 9%,transparent);font-weight:600}
+  .vrow .them{color:var(--mut)}
+  .vcheck{color:var(--green);font-weight:800;margin-right:7px} .vx{color:var(--rose);font-weight:800;margin-right:7px}
+  @media(max-width:640px){.vrow>div{padding:11px 12px;font-size:12.5px}}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;counter-reset:s}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow);position:relative}
+  .step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--green-dk);color:#fff;font-weight:800;font-size:15px;margin-bottom:12px}
+  .step h3{font-size:15px;font-weight:800;margin-bottom:4px} .step p{font-size:13.5px;color:var(--mut)}
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+  @media(max-width:760px){.feats{grid-template-columns:1fr 1fr}}@media(max-width:480px){.feats{grid-template-columns:1fr}}
+  .feat{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+  .feat .ic{font-size:20px} .feat h3{font-size:14px;font-weight:800;margin:7px 0 3px} .feat p{font-size:12.5px;color:var(--mut)}
+  .toggle{display:flex;justify-content:center;margin-top:22px}
+  .toggle .pill{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:var(--shadow);gap:2px;align-items:center}
+  .toggle button{border:0;background:none;font-family:inherit;font-size:13px;font-weight:800;color:var(--mut);padding:8px 18px;border-radius:999px;cursor:pointer}
+  .toggle button.on{background:var(--green-dk);color:#fff}
+  .savehint{font-size:11.5px;color:var(--green-dk);background:var(--pale);border-radius:999px;padding:3px 11px;margin-left:8px;font-weight:800}
+  @media(prefers-color-scheme:dark){.savehint{color:var(--green)}}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;align-items:start}
+  @media(max-width:820px){.plans{grid-template-columns:1fr;max-width:400px;margin-inline:auto}}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 24px;box-shadow:var(--shadow);position:relative;display:flex;flex-direction:column}
+  .card.hi{background:var(--green-dk);border-color:var(--green-dk);color:#fff;box-shadow:var(--shadow-hi);transform:translateY(-8px)}
+  @media(max-width:820px){.card.hi{transform:none}}
+  .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#2A2205;font-size:11.5px;font-weight:800;padding:4px 14px;border-radius:999px;letter-spacing:.03em;white-space:nowrap}
+  .pname{font-size:15px;font-weight:800} .card.hi .pname{color:#CFE6D5}
+  .price{display:flex;align-items:baseline;gap:4px;margin:10px 0 2px}
+  .price .cur{font-size:16px;font-weight:700;opacity:.7} .price .num{font-size:40px;font-weight:850;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .price .per{font-size:13px;color:var(--mut)}
+  .card.hi .price .per{color:#A9C7B2}
+  .save{font-size:12px;color:var(--green-dk);font-weight:700;min-height:17px} .card.hi .save{color:#EADFA0}
+  @media(prefers-color-scheme:dark){.save{color:var(--green)}}
+  .cta{margin-top:16px;border:0;border-radius:12px;padding:12px;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;text-align:center;text-decoration:none;display:block;transition:.15s}
+  .cta.primary{background:var(--green);color:#fff}.cta.primary:hover{filter:brightness(1.08)}
+  .cta.onhi{background:#fff;color:var(--green-dk)} .cta.ghost{background:var(--pale);color:var(--green-dk)}
+  .feat-list{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;font-size:13px}
+  .card.hi .feat-list{border-color:rgba(255,255,255,.18)}
+  .feat-list li{display:flex;gap:9px;align-items:flex-start} .feat-list li::before{content:"✓";color:var(--green);font-weight:800;flex:none}
+  .card.hi .feat-list li::before{color:#8FD3A0}
+  .channel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  @media(max-width:760px){.channel{grid-template-columns:1fr}}
+  .chcard{background:linear-gradient(150deg,var(--green-mid),var(--green-dk));color:#fff;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px}
+  .chcard h3{font-size:16px;font-weight:800} .chcard .cp{font-size:13px;color:#CFE6D5;flex:1}
+  .chcard .cprice{font-size:22px;font-weight:850;margin:2px 0}
+  .chcard a{margin-top:10px;align-self:flex-start;background:rgba(255,255,255,.15);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:8px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.22)}
+  .chcard a:hover{background:rgba(255,255,255,.25)}
+  .faq{max-width:720px;margin:0 auto}
+  details{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:2px 18px;margin-bottom:10px;box-shadow:var(--shadow)}
+  summary{font-size:14px;font-weight:700;cursor:pointer;padding:14px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  summary::after{content:"+";color:var(--green);font-size:20px;font-weight:700} details[open] summary::after{content:"–"}
+  details p{font-size:13.5px;color:var(--mut);padding:0 0 15px}
+  .final{background:linear-gradient(150deg,var(--green-mid),var(--green-dk));border-radius:24px;text-align:center;padding:48px 24px;color:#fff;margin:20px 0}
+  .final h2{color:#fff} .final p{color:#CFE6D5;max-width:46ch;margin:10px auto 0;font-size:15px}
+  .final .bigcta{background:#fff;color:var(--green-dk);margin-top:22px;display:inline-block}
+  footer{text-align:center;padding:34px 20px;font-size:12px;color:var(--mut);border-top:1px solid var(--line)}
+  footer b{color:var(--green-dk)}@media(prefers-color-scheme:dark){footer b{color:var(--green)}}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <span class="brand"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#2E5540"/><circle cx="16" cy="18" r="3" fill="#fff"/><circle cx="24" cy="18" r="3" fill="#fff"/><path d="M12 25c2-2.5 5-2.5 7 0M21 25c2-2.5 5-2.5 7 0" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>客＋人</span>
+  <span class="sp"></span>
+  <a class="plain" href="#why">為什麼</a>
+  <a class="plain" href="#pricing">方案</a>
+  <a class="btn" href="#pricing">免費試用</a>
+</div></nav>
+
+<header class="hero wrap">
+  <h1>客人問不完，<br>但 AI <span class="hl">絕不亂回</span>。</h1>
+  <p>掃一次過去對話，AI 就學會你的店怎麼回客人。答得出的照你口吻回，答不出的絕不瞎掰——不報錯價、不亂承諾，交還給你把關。</p>
+  <div class="cbtns">
+    <a class="bigcta" href="#pricing">免費開始（免註冊）</a>
+    <a class="bigcta sec" href="#why">看它怎麼不一樣</a>
+  </div>
+  <div class="trust"><span>✅ LINE 官方帳號</span><span>✅ 蝦皮賣場</span><span>✅ <b>答不出不亂編</b></span></div>
+</header>
+
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow">為什麼你需要</div>
+    <h2>客服訊息，正在偷走你的時間與生意</h2>
+    <div class="grid3">
+      <div class="pain"><div class="ic">🌙</div><h3>半夜的訊息漏接</h3><p>客人晚上問、隔天才回，熱度過了、單也飛了。你不可能 24 小時盯著聊聊。</p></div>
+      <div class="pain"><div class="ic">🔁</div><h3>同樣的問題回到爛</h3><p>「多少錢」「地址在哪」「有沒有貨」——一天回幾十次，複製貼上到麻木。</p></div>
+      <div class="pain"><div class="ic">⚠️</div><h3>一句話報錯就是客訴</h3><p>價格說錯、時間記錯、隨口答應客製——一個失誤換來退費和負評。</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--pale)">
+  <div class="wrap">
+    <div class="eyebrow">為什麼選我們</div>
+    <h2>平台也有 AI 客服，差別在「會不會闖禍」</h2>
+    <p class="sec-lede">LINE、蝦皮都推了內建 AI 自動回覆。但它們會自作主張——亂承諾、亂報價。客＋人 的每個設計，都在防這件事。</p>
+    <div class="versus">
+      <div class="vrow"><div class="vh"></div><div class="vh us">客＋人</div><div class="vh them">平台內建 AI</div></div>
+      <div class="vrow"><div class="head">答不出的問題</div><div class="us"><span class="vcheck">✓</span>說「幫您確認」交還給你</div><div class="them"><span class="vx">✕</span>自己編一個答案</div></div>
+      <div class="vrow"><div class="head">過期的優惠</div><div class="us"><span class="vcheck">✓</span>自動略過不報</div><div class="them"><span class="vx">✕</span>照舊價報給客人</div></div>
+      <div class="vrow"><div class="head">回覆口吻</div><div class="us"><span class="vcheck">✓</span>學你的說話方式</div><div class="them"><span class="vx">✕</span>官腔、死板</div></div>
+      <div class="vrow"><div class="head">送出前把關</div><div class="us"><span class="vcheck">✓</span>你核可才送（可半自動）</div><div class="them"><span class="vx">✕</span>直接發，出事才知道</div></div>
+      <div class="vrow"><div class="head">跨平台</div><div class="us"><span class="vcheck">✓</span>LINE＋蝦皮一份知識共用</div><div class="them"><span class="vx">✕</span>各平台各自為政</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">怎麼開始</div>
+    <h2>三步，一分鐘上手</h2>
+    <div class="steps">
+      <div class="step"><h3>裝上擴充</h3><p>Chrome 裝好「客＋人」，打開你的 LINE 官方帳號或蝦皮後台。免註冊，直接是訪客體驗。</p></div>
+      <div class="step"><h3>按一下掃描</h3><p>AI 讀過你過去回客人的對話，自動整理成「店家知識」＋學會你的口吻。你檢查一下就好。</p></div>
+      <div class="step"><h3>按「生文案」</h3><p>開任何客人對話，一鍵生出回覆填進輸入框。答得出照答，答不出標記給你——你按送出。</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--pale)">
+  <div class="wrap">
+    <div class="eyebrow">功能</div>
+    <h2>為「怕出錯的生意」而做</h2>
+    <div class="feats">
+      <div class="feat"><div class="ic">🛡️</div><h3>四層防編造</h3><p>答不出就說確認，數字逐字核對，絕不生成假價格。</p></div>
+      <div class="feat"><div class="ic">📥</div><h3>掃描學知識</h3><p>讀歷史對話自動建知識庫，不用一條條打設定。</p></div>
+      <div class="feat"><div class="ic">⏳</div><h3>時效感知</h3><p>過期的早鳥、檔期，AI 自動略過不報給客人。</p></div>
+      <div class="feat"><div class="ic">🗣️</div><h3>學你的口吻</h3><p>回起來像你本人，不是冷冰冰的機器人官腔。</p></div>
+      <div class="feat"><div class="ic">🖼️</div><h3>看圖與圖卡</h3><p>客人傳圖 AI 看得懂；問價目表自動帶出你的 DM。</p></div>
+      <div class="feat"><div class="ic">📋</div><h3>草稿留存</h3><p>生成與寄出全記錄，客訴時有憑有據可回溯。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="eyebrow">方案與價格</div>
+    <h2>先免費試，覺得省心再付</h2>
+    <div class="toggle"><div class="pill">
+      <button id="tY" class="on" onclick="setBill('y')">年繳</button>
+      <button id="tM" onclick="setBill('m')">月繳</button>
+      <span class="savehint" id="saveHint">年繳最省 · 省 2 個月</span>
+    </div></div>
+    <div class="plans">
+      <div class="card">
+        <div class="pname">免費版</div>
+        <div class="price"><span class="cur">NT$</span><span class="num">0</span></div>
+        <div class="save">裝上就能用，免註冊</div>
+        <a class="cta ghost" href="#final">免費安裝</a>
+        <ul class="feat-list"><li>每日 50 則 AI 草擬</li><li>1 個平台帳號</li><li>答不出不亂編（核心防護）</li><li>7 天訪客體驗，隨時轉正</li></ul>
+      </div>
+      <div class="card">
+        <div class="pname">入門版</div>
+        <div class="price"><span class="cur">NT$</span><span class="num" data-y="5,900" data-m="590">5,900</span><span class="per" id="per1">/年</span></div>
+        <div class="save" id="save1">約 NT$492/月 · 省 2 個月</div>
+        <a class="cta ghost buy" id="buy1" data-m="https://buy.recur.tw/TceLEqfOMRmp74fC" data-y="https://buy.recur.tw/w6sB8pSWbynG77Y6" href="https://buy.recur.tw/w6sB8pSWbynG77Y6">開始使用</a>
+        <ul class="feat-list"><li>每日草擬<b>不限</b>次</li><li>單一平台（LINE 或蝦皮）</li><li>1 個帳號 · 單人操作</li><li>掃描歷史對話自動建知識</li><li>答不出不亂編</li></ul>
+      </div>
+      <div class="card hi">
+        <div class="badge">★ 最多人選</div>
+        <div class="pname">專業版</div>
+        <div class="price"><span class="cur">NT$</span><span class="num" data-y="12,800" data-m="1,280">12,800</span><span class="per" id="per2">/年</span></div>
+        <div class="save" id="save2">約 NT$1,067/月 · 省 2 個月</div>
+        <a class="cta onhi buy" id="buy2" data-m="https://buy.recur.tw/2BmIPCHtS5zjtdet" data-y="https://buy.recur.tw/vGnHu5gdl2lRhNTx" href="https://buy.recur.tw/vGnHu5gdl2lRhNTx">開始使用</a>
+        <ul class="feat-list"><li>入門版全部功能</li><li><b>LINE＋蝦皮</b>跨平台一份知識</li><li>多帳號（最多 3 個）</li><li>看圖回覆・關鍵字圖卡</li><li>學店家口吻・時效感知</li><li>草稿與寄出全留存</li></ul>
+      </div>
+    </div>
+
+    <div class="channel">
+      <div class="chcard">
+        <h3>旗艦／代營運</h3>
+        <div class="cprice" id="flagPrice">NT$26,800<span style="font-size:13px;font-weight:600">/年</span></div>
+        <div class="cp">多帳號（≤10）、多席次、白手套導入、優先支援。適合連鎖、多品牌、代營運。</div>
+        <a class="buy" id="buy3" data-m="https://buy.recur.tw/YYhOp3HxPioRmEhZ" data-y="https://buy.recur.tw/xQdJQQHELnYkLF5c" href="https://buy.recur.tw/xQdJQQHELnYkLF5c">開始使用 →</a>
+      </div>
+      <div class="chcard"><h3>經銷商方案</h3><div class="cp">談一批席次配給你底下的商家統一管理——後台看每家用量、一鍵開通停用。適合代理商、系統商、社群團主。</div><a href="#contact">洽談批發席次 →</a></div>
+      <div class="chcard"><h3>推廣夥伴</h3><div class="cp">幫我們推薦商家、拿專屬邀請碼。每成交一個抽一份，你推薦的商家也拿優惠。</div><a href="#contact">成為推廣夥伴 →</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">常見問題</div>
+    <h2 class="faq" style="margin-bottom:20px">還有點猶豫？</h2>
+    <div class="faq">
+      <details open><summary>AI 會不會亂回、報錯價格？</summary><p>不會，這是核心設計。AI 只照你設定的店家知識回答，沒有的就說「幫您確認一下」交還給你，絕不自己編價格、時間或承諾。過期優惠也會自動略過。</p></details>
+      <details><summary>需要技術背景嗎？</summary><p>不用。裝 Chrome 擴充、打開你的後台、按一下「掃描」，AI 就會讀過去對話學會你的店。全程約一分鐘，不用寫任何設定。</p></details>
+      <details><summary>我的客人對話會外洩嗎？</summary><p>不會。每個商家的對話以獨立金鑰加密，連我們都讀不到內容；店家知識只有你能改。</p></details>
+      <details><summary>可以先試再決定嗎？</summary><p>可以。裝上直接是 7 天訪客體驗（每日 50 則）免註冊；想留資料就轉正、送 14 天全功能試用，訪客期間教 AI 的知識完整保留、不用重教。</p></details>
+      <details><summary>付款後怎麼開通？</summary><p>線上刷卡付款完成後，系統會 Email 寄一組兌換碼給你；在擴充裡輸入即開通，不用等人工。月繳隨時可停。</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="final"><div class="wrap"><div class="final">
+  <h2>今晚的客人訊息，交給不會闖禍的 AI</h2>
+  <p>免費裝、免註冊、一分鐘上手。答不出的它不瞎掰——這是你能放心睡的原因。</p>
+  <a class="bigcta" href="#" id="installBtn">免費安裝擴充</a>
+</div></div></section>
+
+<footer id="contact">
+  <b>客＋人</b> · LINE．蝦皮 客服 AI｜答不出不亂編<br>
+  經銷／推廣洽談・技術支援　→　（部署後填你的聯絡方式：LINE / Email）<br>
+  <span style="opacity:.7">付款由 Recur 處理，可隨時取消。</span>
+</footer>
+
+<script>
+  function setBill(m){
+    var yr = m==='y';
+    document.getElementById('tY').classList.toggle('on',yr);
+    document.getElementById('tM').classList.toggle('on',!yr);
+    document.querySelectorAll('.num[data-y]').forEach(function(n){n.textContent=yr?n.dataset.y:n.dataset.m;});
+    document.getElementById('per1').textContent=yr?'/年':'/月';
+    document.getElementById('per2').textContent=yr?'/年':'/月';
+    document.getElementById('save1').textContent=yr?'約 NT$492/月 · 省 2 個月':'月繳彈性，年繳更省';
+    document.getElementById('save2').textContent=yr?'約 NT$1,067/月 · 省 2 個月':'月繳彈性，年繳更省';
+    document.getElementById('saveHint').textContent=yr?'年繳最省 · 省 2 個月':'月繳無綁約';
+    document.getElementById('flagPrice').innerHTML=yr?'NT$26,800<span style="font-size:13px;font-weight:600">/年</span>':'NT$2,680<span style="font-size:13px;font-weight:600">/月</span>';
+    document.querySelectorAll('a.buy').forEach(function(a){a.href=yr?a.dataset.y:a.dataset.m;});
+  }
+  document.getElementById('installBtn').addEventListener('click',function(e){e.preventDefault();alert('部署時把這顆按鈕連到你的擴充下載頁 / Chrome 線上應用程式商店');});
+</script>
+</body>
+</html>

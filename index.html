@@ -3,143 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>客＋人 · LINE．蝦皮 客服 AI｜答不出不亂編</title>
-<meta name="description" content="掃一次過去對話，AI 就學會你的店怎麼回客人。答得出的照你口吻回，答不出的絕不瞎掰——不報錯價、不亂承諾。LINE 官方帳號、蝦皮賣場都能用。">
-<meta name="theme-color" content="#2E5540">
+<title>客＋人 · LINE．蝦皮 客服 AI｜答不出，不亂編</title>
+<meta name="description" content="客＋人讀懂你的商品、價格和規則，替你寫好每一則客服回覆。它不確定的事會老實標出來交回給你——不會替你的店亂承諾。LINE 官方帳號、蝦皮賣場都能用。">
+<meta name="theme-color" content="#0E3B24">
 <meta property="og:type" content="website">
-<meta property="og:title" content="客＋人 · 客服 AI｜答不出不亂編">
-<meta property="og:description" content="掃一次對話 AI 就學會你的店。答不出的不瞎掰、不報錯價、不亂承諾。LINE、蝦皮都能用。">
+<meta property="og:title" content="客＋人 · 客服 AI｜答不出，不亂編">
+<meta property="og:description" content="回覆訊息，AI 先擬好草稿。資料裡沒有的，它標「留給你」——不會替你的店亂承諾。">
 <meta property="og:site_name" content="客＋人">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%232E5540'/%3E%3Ccircle cx='16' cy='18' r='3' fill='%23fff'/%3E%3Ccircle cx='24' cy='18' r='3' fill='%23fff'/%3E%3Cpath d='M12 25c2-2.5 5-2.5 7 0M21 25c2-2.5 5-2.5 7 0' stroke='%23fff' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%23157A46'/%3E%3Ccircle cx='15' cy='22' r='3.2' fill='%23fff'/%3E%3Ccircle cx='25' cy='22' r='3.2' fill='%23fff'/%3E%3Ccircle cx='14' cy='33' r='2.2' fill='%23B7E389'/%3E%3C/svg%3E">
 <style>
   :root{
-    --bg:#F3F5F0; --paper:#FFF; --ink:#14201A; --mut:#5E6E63; --line:#E1E8E1;
-    --green:#599D65; --green-dk:#2E5540; --green-mid:#3E6B4E; --pale:#E9F1EA; --gold:#C89B3C;
-    --rose:#B2503F;
-    --shadow:0 1px 2px rgba(20,32,26,.05),0 8px 30px rgba(20,32,26,.07);
-    --shadow-hi:0 6px 16px rgba(46,85,64,.18),0 22px 54px rgba(46,85,64,.22);
+    --bg:#F2EFE6; --paper:#FFFFFF; --ink:#1A2B20; --mut:#66735F; --line:#E3E0D2;
+    --brand:#157A46; --brand-dk:#0E5C33; --deep:#0E3B24; --lime:#B7E389; --lime-dk:#7FB84E;
+    --cream:#F7F0DC; --gold-ink:#6B5619;
+    --shadow:0 1px 2px rgba(14,59,36,.06),0 10px 34px rgba(14,59,36,.08);
+    --shadow-hi:0 8px 20px rgba(14,59,36,.22),0 26px 60px rgba(14,59,36,.24);
     --sans:"PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;
-    --wrap:1080px;
+    --wrap:1120px;
   }
-  @media(prefers-color-scheme:dark){:root{--bg:#0F150E;--paper:#171F17;--ink:#E8EFE6;--mut:#93A598;--line:#25322A;--pale:#1B291F;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 30px rgba(0,0,0,.35);--shadow-hi:0 6px 16px rgba(0,0,0,.5),0 22px 54px rgba(0,0,0,.55)}}
-  :root[data-theme="light"]{--bg:#F3F5F0;--paper:#FFF;--ink:#14201A;--mut:#5E6E63;--line:#E1E8E1;--pale:#E9F1EA}
-  :root[data-theme="dark"]{--bg:#0F150E;--paper:#171F17;--ink:#E8EFE6;--mut:#93A598;--line:#25322A;--pale:#1B291F;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 30px rgba(0,0,0,.35);--shadow-hi:0 6px 16px rgba(0,0,0,.5),0 22px 54px rgba(0,0,0,.55)}
+  @media(prefers-color-scheme:dark){:root{--bg:#101710;--paper:#182118;--ink:#EAF1E6;--mut:#93A392;--line:#26332A;--cream:#25301E;--gold-ink:#D8C68A;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.35);--shadow-hi:0 8px 20px rgba(0,0,0,.5),0 26px 60px rgba(0,0,0,.5)}}
+  :root[data-theme="light"]{--bg:#F2EFE6;--paper:#FFF;--ink:#1A2B20;--mut:#66735F;--line:#E3E0D2;--cream:#F7F0DC;--gold-ink:#6B5619}
+  :root[data-theme="dark"]{--bg:#101710;--paper:#182118;--ink:#EAF1E6;--mut:#93A392;--line:#26332A;--cream:#25301E;--gold-ink:#D8C68A;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.35);--shadow-hi:0 8px 20px rgba(0,0,0,.5),0 26px 60px rgba(0,0,0,.5)}
   *{box-sizing:border-box;margin:0} html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
-  section{padding:56px 0}
-  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--green);text-transform:uppercase;text-align:center}
-  h2{font-size:clamp(22px,3.5vw,30px);font-weight:800;text-align:center;color:var(--green-dk);text-wrap:balance;margin-top:6px}
-  @media(prefers-color-scheme:dark){h2,.faq h2{color:var(--ink)}}
-  .sec-lede{text-align:center;color:var(--mut);max-width:56ch;margin:10px auto 0;font-size:15px}
-  nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav-in{max-width:var(--wrap);margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:12px}
-  .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.04em;color:var(--green-dk)}
-  @media(prefers-color-scheme:dark){.brand{color:var(--ink)}}
-  .brand svg{width:30px;height:30px}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+  section{padding:64px 0}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--brand);text-transform:uppercase;text-align:center}
+  h2{font-size:clamp(24px,3.6vw,34px);font-weight:850;text-align:center;text-wrap:balance;letter-spacing:.01em}
+  .sec-lede{text-align:center;color:var(--mut);max-width:52ch;margin:12px auto 0;font-size:15px}
+  .logo{display:inline-flex;width:34px;height:34px;flex:none}
+  nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:var(--wrap);margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:14px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:17px;letter-spacing:.05em}
   .nav-in .sp{flex:1}
-  .nav-in a{color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:700;opacity:.8}
-  .nav-in a.btn{background:var(--green);color:#fff;padding:8px 15px;border-radius:10px;opacity:1}
+  .nav-in a{color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:700;opacity:.85}
+  .nav-in a.btn{background:var(--brand);color:#fff;padding:9px 18px;border-radius:999px;opacity:1}
   @media(max-width:560px){.nav-in a.plain{display:none}}
-  .hero{text-align:center;padding:60px 0 40px}
-  .hero h1{font-size:clamp(30px,6vw,52px);font-weight:850;letter-spacing:-.01em;color:var(--green-dk);text-wrap:balance;line-height:1.2}
-  @media(prefers-color-scheme:dark){.hero h1{color:var(--ink)}}
-  .hero h1 .hl{color:var(--green)}
-  .hero p{font-size:clamp(15px,2.2vw,18px);color:var(--ink);opacity:.85;max-width:54ch;margin:18px auto 0}
-  .hero .cbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
-  .bigcta{background:var(--green);color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:13px 26px;border-radius:12px;box-shadow:var(--shadow-hi);transition:.15s}
-  .bigcta:hover{filter:brightness(1.08);transform:translateY(-1px)}
-  .bigcta.sec{background:var(--paper);color:var(--green-dk);box-shadow:var(--shadow);border:1px solid var(--line)}
-  .trust{display:flex;gap:8px 22px;justify-content:center;flex-wrap:wrap;margin-top:26px;font-size:13px;color:var(--mut);font-weight:600}
-  .trust b{color:var(--green-dk)} @media(prefers-color-scheme:dark){.trust b{color:var(--green)}}
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .hero{text-align:center;padding:74px 0 30px}
+  .hero .pill{display:inline-block;background:color-mix(in srgb,var(--lime) 32%,var(--bg));color:var(--brand-dk);border:1px solid color-mix(in srgb,var(--lime) 60%,var(--line));font-size:13px;font-weight:800;padding:7px 18px;border-radius:999px}
+  @media(prefers-color-scheme:dark){.hero .pill{color:var(--lime)}}
+  .hero h1{font-size:clamp(34px,6.4vw,60px);font-weight:900;letter-spacing:.005em;line-height:1.18;margin-top:22px;text-wrap:balance}
+  .hero h1 .hl{color:var(--brand)}
+  .hero p{font-size:clamp(15px,2.2vw,18.5px);color:var(--ink);opacity:.82;max-width:50ch;margin:20px auto 0}
+  .cbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .bigcta{background:var(--brand);color:#fff;text-decoration:none;font-weight:800;font-size:15.5px;padding:15px 30px;border-radius:14px;box-shadow:var(--shadow-hi);transition:.15s}
+  .bigcta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+  .bigcta.sec{background:var(--paper);color:var(--ink);box-shadow:var(--shadow);border:1.5px solid var(--line)}
+  .trust{margin-top:18px;font-size:13px;color:var(--mut);font-weight:600}
+  .platstrip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin-top:52px}
+  .platstrip .in{display:flex;gap:10px 30px;justify-content:center;flex-wrap:wrap;font-size:13.5px;font-weight:700;color:var(--mut)}
+  .platstrip b{color:var(--ink)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
   @media(max-width:760px){.grid3{grid-template-columns:1fr}}
-  .pain{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
-  .pain .ic{font-size:24px} .pain h3{font-size:15.5px;font-weight:800;margin:8px 0 4px} .pain p{font-size:13.5px;color:var(--mut)}
-  .versus{background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);margin-top:30px}
-  .vrow{display:grid;grid-template-columns:1.1fr 1fr 1fr;border-bottom:1px solid var(--line)}
-  .vrow:last-child{border-bottom:0}
-  .vrow>div{padding:15px 18px;font-size:13.5px;display:flex;align-items:center}
-  .vrow .vh{font-weight:800;font-size:13px}
-  .vrow .head{background:var(--pale)}
-  .vrow .us{background:color-mix(in srgb,var(--green) 9%,transparent);font-weight:600}
-  .vrow .them{color:var(--mut)}
-  .vcheck{color:var(--green);font-weight:800;margin-right:7px} .vx{color:var(--rose);font-weight:800;margin-right:7px}
-  @media(max-width:640px){.vrow>div{padding:11px 12px;font-size:12.5px}}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;counter-reset:s}
+  .pain{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+  .pain .ic{font-size:24px} .pain h3{font-size:16px;font-weight:800;margin:10px 0 4px} .pain p{font-size:13.5px;color:var(--mut)}
+  .deepblock{background:var(--deep);color:#EAF3E4;padding:84px 0}
+  .deep-in{max-width:var(--wrap);margin:0 auto;padding:0 22px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+  @media(max-width:860px){.deep-in{grid-template-columns:1fr}}
+  .deepblock h2{color:var(--lime);text-align:left;font-size:clamp(34px,5vw,52px);line-height:1.25}
+  .deepblock .dp{margin-top:22px;font-size:15.5px;color:#C7DCC3;max-width:46ch}
+  .dcards{display:flex;flex-direction:column;gap:14px}
+  .dcard{background:rgba(255,255,255,.055);border:1px solid rgba(183,227,137,.22);border-radius:14px;padding:16px 20px}
+  .dcard b{display:block;color:var(--lime);font-size:14px;margin-bottom:3px}
+  .dcard span{font-size:13.5px;color:#D7E7D2}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;counter-reset:s}
   @media(max-width:760px){.steps{grid-template-columns:1fr}}
-  .step{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow);position:relative}
-  .step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--green-dk);color:#fff;font-weight:800;font-size:15px;margin-bottom:12px}
-  .step h3{font-size:15px;font-weight:800;margin-bottom:4px} .step p{font-size:13.5px;color:var(--mut)}
-  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow);position:relative}
+  .step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--deep);color:var(--lime);font-weight:850;font-size:16px;margin-bottom:12px}
+  .step h3{font-size:15.5px;font-weight:800;margin-bottom:4px} .step p{font-size:13.5px;color:var(--mut)}
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
   @media(max-width:760px){.feats{grid-template-columns:1fr 1fr}}@media(max-width:480px){.feats{grid-template-columns:1fr}}
-  .feat{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
-  .feat .ic{font-size:20px} .feat h3{font-size:14px;font-weight:800;margin:7px 0 3px} .feat p{font-size:12.5px;color:var(--mut)}
-  .toggle{display:flex;justify-content:center;margin-top:22px}
-  .toggle .pill{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:var(--shadow);gap:2px;align-items:center}
-  .toggle button{border:0;background:none;font-family:inherit;font-size:13px;font-weight:800;color:var(--mut);padding:8px 18px;border-radius:999px;cursor:pointer}
-  .toggle button.on{background:var(--green-dk);color:#fff}
-  .savehint{font-size:11.5px;color:var(--green-dk);background:var(--pale);border-radius:999px;padding:3px 11px;margin-left:8px;font-weight:800}
-  @media(prefers-color-scheme:dark){.savehint{color:var(--green)}}
-  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;align-items:start}
-  @media(max-width:820px){.plans{grid-template-columns:1fr;max-width:400px;margin-inline:auto}}
-  .card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px 24px;box-shadow:var(--shadow);position:relative;display:flex;flex-direction:column}
-  .card.hi{background:var(--green-dk);border-color:var(--green-dk);color:#fff;box-shadow:var(--shadow-hi);transform:translateY(-8px)}
-  @media(max-width:820px){.card.hi{transform:none}}
-  .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#2A2205;font-size:11.5px;font-weight:800;padding:4px 14px;border-radius:999px;letter-spacing:.03em;white-space:nowrap}
-  .pname{font-size:15px;font-weight:800} .card.hi .pname{color:#CFE6D5}
-  .price{display:flex;align-items:baseline;gap:4px;margin:10px 0 2px}
-  .price .cur{font-size:16px;font-weight:700;opacity:.7} .price .num{font-size:40px;font-weight:850;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .price .per{font-size:13px;color:var(--mut)}
-  .card.hi .price .per{color:#A9C7B2}
-  .save{font-size:12px;color:var(--green-dk);font-weight:700;min-height:17px} .card.hi .save{color:#EADFA0}
-  @media(prefers-color-scheme:dark){.save{color:var(--green)}}
-  .cta{margin-top:16px;border:0;border-radius:12px;padding:12px;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;text-align:center;text-decoration:none;display:block;transition:.15s}
-  .cta.primary{background:var(--green);color:#fff}.cta.primary:hover{filter:brightness(1.08)}
-  .cta.onhi{background:#fff;color:var(--green-dk)} .cta.ghost{background:var(--pale);color:var(--green-dk)}
-  .feat-list{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;font-size:13px}
-  .card.hi .feat-list{border-color:rgba(255,255,255,.18)}
-  .feat-list li{display:flex;gap:9px;align-items:flex-start} .feat-list li::before{content:"✓";color:var(--green);font-weight:800;flex:none}
-  .card.hi .feat-list li::before{color:#8FD3A0}
-  .channel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  .feat{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+  .feat .ic{font-size:21px} .feat h3{font-size:14.5px;font-weight:800;margin:8px 0 3px} .feat p{font-size:12.5px;color:var(--mut)}
+  .toggle{display:flex;justify-content:center;margin-top:26px}
+  .toggle .pillbox{display:inline-flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 6px;box-shadow:var(--shadow)}
+  .toggle button{border:0;background:none;font-family:inherit;font-size:13.5px;font-weight:800;color:var(--mut);padding:9px 20px;border-radius:999px;cursor:pointer}
+  .toggle button.on{background:var(--brand);color:#fff}
+  .savehint{font-size:12px;color:var(--gold-ink);background:var(--cream);border-radius:999px;padding:5px 14px;font-weight:800;white-space:nowrap}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;align-items:start}
+  @media(max-width:860px){.plans{grid-template-columns:1fr;max-width:420px;margin-inline:auto}}
+  .card{background:var(--paper);border:1.5px solid var(--line);border-radius:20px;padding:28px 26px;box-shadow:var(--shadow);position:relative;display:flex;flex-direction:column}
+  .card.hi{border-color:var(--brand);border-width:2px;box-shadow:var(--shadow-hi)}
+  .badge{position:absolute;top:-13px;left:26px;background:var(--brand);color:#fff;font-size:11.5px;font-weight:800;padding:5px 14px;border-radius:999px;letter-spacing:.03em;white-space:nowrap}
+  .pname{font-size:16.5px;font-weight:850} .pline{font-size:12.5px;color:var(--mut);margin-top:2px}
+  .price{display:flex;align-items:baseline;gap:4px;margin:16px 0 2px}
+  .price .cur{font-size:16px;font-weight:800;opacity:.65} .price .num{font-size:42px;font-weight:900;letter-spacing:-.02em;font-variant-numeric:tabular-nums} .price .per{font-size:13px;color:var(--mut)}
+  .save{font-size:12px;color:var(--brand-dk);font-weight:700;min-height:17px}
+  @media(prefers-color-scheme:dark){.save{color:var(--lime)}}
+  .cta{margin-top:18px;border:0;border-radius:13px;padding:13px;font-family:inherit;font-size:14.5px;font-weight:800;cursor:pointer;text-align:center;text-decoration:none;display:block;transition:.15s}
+  .cta.primary{background:var(--brand);color:#fff}.cta.primary:hover{filter:brightness(1.07)}
+  .cta.ghost{background:color-mix(in srgb,var(--lime) 22%,var(--paper));color:var(--brand-dk);border:1px solid color-mix(in srgb,var(--lime) 45%,var(--line))}
+  @media(prefers-color-scheme:dark){.cta.ghost{color:var(--lime)}}
+  .feat-list{list-style:none;margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px;font-size:13.5px}
+  .feat-list li{display:flex;gap:9px;align-items:flex-start} .feat-list li::before{content:"✓";color:var(--brand);font-weight:900;flex:none}
+  .channel{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
   @media(max-width:760px){.channel{grid-template-columns:1fr}}
-  .chcard{background:linear-gradient(150deg,var(--green-mid),var(--green-dk));color:#fff;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px}
-  .chcard h3{font-size:16px;font-weight:800} .chcard .cp{font-size:13px;color:#CFE6D5;flex:1}
-  .chcard .cprice{font-size:22px;font-weight:850;margin:2px 0}
-  .chcard a{margin-top:10px;align-self:flex-start;background:rgba(255,255,255,.15);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:8px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.22)}
-  .chcard a:hover{background:rgba(255,255,255,.25)}
-  .faq{max-width:720px;margin:0 auto}
-  details{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:2px 18px;margin-bottom:10px;box-shadow:var(--shadow)}
-  summary{font-size:14px;font-weight:700;cursor:pointer;padding:14px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
-  summary::after{content:"+";color:var(--green);font-size:20px;font-weight:700} details[open] summary::after{content:"–"}
-  details p{font-size:13.5px;color:var(--mut);padding:0 0 15px}
-  .final{background:linear-gradient(150deg,var(--green-mid),var(--green-dk));border-radius:24px;text-align:center;padding:48px 24px;color:#fff;margin:20px 0}
-  .final h2{color:#fff} .final p{color:#CFE6D5;max-width:46ch;margin:10px auto 0;font-size:15px}
-  .final .bigcta{background:#fff;color:var(--green-dk);margin-top:22px;display:inline-block}
-  footer{text-align:center;padding:34px 20px;font-size:12px;color:var(--mut);border-top:1px solid var(--line)}
-  footer b{color:var(--green-dk)}@media(prefers-color-scheme:dark){footer b{color:var(--green)}}
+  .chcard{background:var(--deep);color:#EAF3E4;border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:6px}
+  .chcard h3{font-size:16px;font-weight:800;color:var(--lime)} .chcard .cp{font-size:13px;color:#C7DCC3;flex:1}
+  .chcard .cprice{font-size:23px;font-weight:900;margin:2px 0}
+  .chcard a{margin-top:12px;align-self:flex-start;background:rgba(255,255,255,.12);color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:9px 18px;border-radius:11px;border:1px solid rgba(183,227,137,.3)}
+  .chcard a:hover{background:rgba(255,255,255,.2)}
+  .faq{max-width:740px;margin:0 auto}
+  details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:2px 20px;margin-bottom:10px;box-shadow:var(--shadow)}
+  summary{font-size:14.5px;font-weight:750;cursor:pointer;padding:15px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  summary::after{content:"+";color:var(--brand);font-size:21px;font-weight:700} details[open] summary::after{content:"–"}
+  details p{font-size:13.5px;color:var(--mut);padding:0 0 16px}
+  .final{background:var(--deep);border-radius:26px;text-align:center;padding:56px 26px;color:#EAF3E4;margin:12px 0}
+  .final h2{color:var(--lime)} .final p{color:#C7DCC3;max-width:44ch;margin:12px auto 0;font-size:15px}
+  .final .bigcta{background:var(--lime);color:var(--deep);margin-top:26px;display:inline-block}
+  footer{padding:36px 22px;font-size:12.5px;color:var(--mut);border-top:1px solid var(--line)}
+  .foot-in{max-width:var(--wrap);margin:0 auto;display:flex;gap:10px 26px;align-items:center;flex-wrap:wrap}
+  .foot-in .sp{flex:1} footer a{color:var(--mut)}
 </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute"><defs>
+<g id="kmark"><rect width="40" height="40" rx="11" fill="#157A46"/><circle cx="15" cy="22" r="3.2" fill="#fff"/><circle cx="25" cy="22" r="3.2" fill="#fff"/><circle cx="14" cy="33" r="2.2" fill="#B7E389"/></g>
+</defs></svg>
+
 <nav><div class="nav-in">
-  <span class="brand"><svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#2E5540"/><circle cx="16" cy="18" r="3" fill="#fff"/><circle cx="24" cy="18" r="3" fill="#fff"/><path d="M12 25c2-2.5 5-2.5 7 0M21 25c2-2.5 5-2.5 7 0" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>客＋人</span>
+  <span class="brand"><svg class="logo" viewBox="0 0 40 40"><use href="#kmark"/></svg>客＋人</span>
   <span class="sp"></span>
-  <a class="plain" href="#why">為什麼</a>
-  <a class="plain" href="#pricing">方案</a>
-  <a class="btn" href="#pricing">免費試用</a>
+  <a class="plain" href="#promise">為什麼</a>
+  <a class="plain" href="#pricing">方案定價</a>
+  <a class="btn" href="#final">免費加入 Chrome</a>
 </div></nav>
 
 <header class="hero wrap">
-  <h1>客人問不完，<br>但 AI <span class="hl">絕不亂回</span>。</h1>
-  <p>掃一次過去對話，AI 就學會你的店怎麼回客人。答得出的照你口吻回，答不出的絕不瞎掰——不報錯價、不亂承諾，交還給你把關。</p>
+  <span class="pill">給台灣中小商家的 AI 客服幫手</span>
+  <h1>回覆訊息，<br>AI <span class="hl">先擬好草稿</span>。</h1>
+  <p>客＋人讀懂你的商品、價格和規則，替你寫好每一則客服回覆。它不確定的事，會老實標出來交回給你——不會替你的店亂承諾。</p>
   <div class="cbtns">
-    <a class="bigcta" href="#pricing">免費開始（免註冊）</a>
-    <a class="bigcta sec" href="#why">看它怎麼不一樣</a>
+    <a class="bigcta" href="#final">免費加入 Chrome</a>
+    <a class="bigcta sec" href="#pricing">查看方案</a>
   </div>
-  <div class="trust"><span>✅ LINE 官方帳號</span><span>✅ 蝦皮賣場</span><span>✅ <b>答不出不亂編</b></span></div>
+  <div class="trust">免註冊、裝上就能用。免費版每天 50 則草稿。</div>
 </header>
 
-<section id="why">
+<div class="platstrip"><div class="in wrap">
+  <span>在你原本的客服頁面直接用</span><b>LINE 官方帳號</b><b>蝦皮賣場</b>
+</div></div>
+
+<section>
   <div class="wrap">
     <div class="eyebrow">為什麼你需要</div>
     <h2>客服訊息，正在偷走你的時間與生意</h2>
@@ -151,21 +157,20 @@
   </div>
 </section>
 
-<section style="background:var(--pale)">
-  <div class="wrap">
-    <div class="eyebrow">為什麼選我們</div>
-    <h2>平台也有 AI 客服，差別在「會不會闖禍」</h2>
-    <p class="sec-lede">LINE、蝦皮都推了內建 AI 自動回覆。但它們會自作主張——亂承諾、亂報價。客＋人 的每個設計，都在防這件事。</p>
-    <div class="versus">
-      <div class="vrow"><div class="vh"></div><div class="vh us">客＋人</div><div class="vh them">平台內建 AI</div></div>
-      <div class="vrow"><div class="head">答不出的問題</div><div class="us"><span class="vcheck">✓</span>說「幫您確認」交還給你</div><div class="them"><span class="vx">✕</span>自己編一個答案</div></div>
-      <div class="vrow"><div class="head">過期的優惠</div><div class="us"><span class="vcheck">✓</span>自動略過不報</div><div class="them"><span class="vx">✕</span>照舊價報給客人</div></div>
-      <div class="vrow"><div class="head">回覆口吻</div><div class="us"><span class="vcheck">✓</span>學你的說話方式</div><div class="them"><span class="vx">✕</span>官腔、死板</div></div>
-      <div class="vrow"><div class="head">送出前把關</div><div class="us"><span class="vcheck">✓</span>你核可才送（可半自動）</div><div class="them"><span class="vx">✕</span>直接發，出事才知道</div></div>
-      <div class="vrow"><div class="head">跨平台</div><div class="us"><span class="vcheck">✓</span>LINE＋蝦皮一份知識共用</div><div class="them"><span class="vx">✕</span>各平台各自為政</div></div>
+<div class="deepblock" id="promise">
+  <div class="deep-in">
+    <div>
+      <h2>答不出，<br>不亂編。</h2>
+      <p class="dp">多數 AI 客服最可怕的地方，是替你的店編出不存在的優惠、錯的價格。客＋人只根據你提供的商家資料回答。</p>
+      <p class="dp">資料裡沒有的，它會標成「留給你」——一句人話告訴你它不確定什麼，而不是硬掰一個答案。</p>
+    </div>
+    <div class="dcards">
+      <div class="dcard"><b>資料裡有的 → 直接寫進草稿</b><span>價格、口味、營業時間、運費規則，寫得又快又準。</span></div>
+      <div class="dcard"><b>資料裡沒有的 → 標「留給你」</b><span>預訂規則沒寫？它不猜。標出來，由你決定怎麼回。</span></div>
+      <div class="dcard"><b>過期的自動略過</b><span>早鳥、檔期到了就不再報，不會拿舊優惠坑你。</span></div>
     </div>
   </div>
-</section>
+</div>
 
 <section>
   <div class="wrap">
@@ -173,19 +178,19 @@
     <h2>三步，一分鐘上手</h2>
     <div class="steps">
       <div class="step"><h3>裝上擴充</h3><p>Chrome 裝好「客＋人」，打開你的 LINE 官方帳號或蝦皮後台。免註冊，直接是訪客體驗。</p></div>
-      <div class="step"><h3>按一下掃描</h3><p>AI 讀過你過去回客人的對話，自動整理成「店家知識」＋學會你的口吻。你檢查一下就好。</p></div>
-      <div class="step"><h3>按「生文案」</h3><p>開任何客人對話，一鍵生出回覆填進輸入框。答得出照答，答不出標記給你——你按送出。</p></div>
+      <div class="step"><h3>按一下掃描</h3><p>AI 讀過你過去回客人的對話，自動整理成「店家資料」＋學會你的口吻。你檢查一下就好。</p></div>
+      <div class="step"><h3>按「生文案」</h3><p>開任何客人對話，一鍵生出回覆草稿填進輸入框。答得出照答，答不出標「留給你」——你按送出。</p></div>
     </div>
   </div>
 </section>
 
-<section style="background:var(--pale)">
+<section style="padding-top:0">
   <div class="wrap">
     <div class="eyebrow">功能</div>
     <h2>為「怕出錯的生意」而做</h2>
     <div class="feats">
-      <div class="feat"><div class="ic">🛡️</div><h3>四層防編造</h3><p>答不出就說確認，數字逐字核對，絕不生成假價格。</p></div>
-      <div class="feat"><div class="ic">📥</div><h3>掃描學知識</h3><p>讀歷史對話自動建知識庫，不用一條條打設定。</p></div>
+      <div class="feat"><div class="ic">🛡️</div><h3>四層防編造</h3><p>答不出就標「留給你」，數字逐字核對，絕不生成假價格。</p></div>
+      <div class="feat"><div class="ic">📥</div><h3>掃描學知識</h3><p>讀歷史對話自動建店家資料，不用一條條打設定。</p></div>
       <div class="feat"><div class="ic">⏳</div><h3>時效感知</h3><p>過期的早鳥、檔期，AI 自動略過不報給客人。</p></div>
       <div class="feat"><div class="ic">🗣️</div><h3>學你的口吻</h3><p>回起來像你本人，不是冷冰冰的機器人官腔。</p></div>
       <div class="feat"><div class="ic">🖼️</div><h3>看圖與圖卡</h3><p>客人傳圖 AI 看得懂；問價目表自動帶出你的 DM。</p></div>
@@ -194,37 +199,38 @@
   </div>
 </section>
 
-<section id="pricing">
+<section id="pricing" style="padding-top:0">
   <div class="wrap">
-    <div class="eyebrow">方案與價格</div>
+    <div class="eyebrow">方案定價</div>
     <h2>先免費試，覺得省心再付</h2>
-    <div class="toggle"><div class="pill">
-      <button id="tY" class="on" onclick="setBill('y')">年繳</button>
+    <p class="sec-lede">免費版免註冊、裝上就能用。付費方案月繳隨時可停。</p>
+    <div class="toggle"><div class="pillbox">
       <button id="tM" onclick="setBill('m')">月繳</button>
-      <span class="savehint" id="saveHint">年繳最省 · 省 2 個月</span>
+      <button id="tY" class="on" onclick="setBill('y')">年繳</button>
+      <span class="savehint" id="saveHint">年繳＝10 個月價，現省 2 個月</span>
     </div></div>
     <div class="plans">
       <div class="card">
-        <div class="pname">免費版</div>
+        <div class="pname">免費版</div><div class="pline">先試試，順手再說。</div>
         <div class="price"><span class="cur">NT$</span><span class="num">0</span></div>
-        <div class="save">裝上就能用，免註冊</div>
+        <div class="save">免註冊，裝上就能用</div>
         <a class="cta ghost" href="#final">免費安裝</a>
-        <ul class="feat-list"><li>每日 50 則 AI 草擬</li><li>1 個平台帳號</li><li>答不出不亂編（核心防護）</li><li>7 天訪客體驗，隨時轉正</li></ul>
+        <ul class="feat-list"><li>每日 50 則 AI 草稿</li><li>1 個平台帳號</li><li>答不出不亂編（核心防護）</li><li>7 天訪客體驗，隨時轉正</li></ul>
       </div>
       <div class="card">
-        <div class="pname">入門版</div>
-        <div class="price"><span class="cur">NT$</span><span class="num" data-y="5,900" data-m="590">5,900</span><span class="per" id="per1">/年</span></div>
+        <div class="pname">入門版</div><div class="pline">一人顧店也回得完。</div>
+        <div class="price"><span class="cur">NT$</span><span class="num" data-y="5,900" data-m="590">5,900</span><span class="per per1">/年</span></div>
         <div class="save" id="save1">約 NT$492/月 · 省 2 個月</div>
-        <a class="cta ghost buy" id="buy1" data-m="https://buy.recur.tw/TceLEqfOMRmp74fC" data-y="https://buy.recur.tw/w6sB8pSWbynG77Y6" href="https://buy.recur.tw/w6sB8pSWbynG77Y6">開始使用</a>
-        <ul class="feat-list"><li>每日草擬<b>不限</b>次</li><li>單一平台（LINE 或蝦皮）</li><li>1 個帳號 · 單人操作</li><li>掃描歷史對話自動建知識</li><li>答不出不亂編</li></ul>
+        <a class="cta ghost buy" data-m="https://buy.recur.tw/TceLEqfOMRmp74fC" data-y="https://buy.recur.tw/w6sB8pSWbynG77Y6" href="https://buy.recur.tw/w6sB8pSWbynG77Y6">開始使用</a>
+        <ul class="feat-list"><li>每日草稿<b>不限</b>次</li><li>單一平台（LINE 或蝦皮）</li><li>1 個帳號 · 單人操作</li><li>掃描歷史對話自動建資料</li><li>答不出不亂編</li></ul>
       </div>
       <div class="card hi">
-        <div class="badge">★ 最多人選</div>
-        <div class="pname">專業版</div>
-        <div class="price"><span class="cur">NT$</span><span class="num" data-y="12,800" data-m="1,280">12,800</span><span class="per" id="per2">/年</span></div>
+        <div class="badge">★ 最多小店選這個</div>
+        <div class="pname">專業版</div><div class="pline">LINE、蝦皮都要顧的店。</div>
+        <div class="price"><span class="cur">NT$</span><span class="num" data-y="12,800" data-m="1,280">12,800</span><span class="per per1">/年</span></div>
         <div class="save" id="save2">約 NT$1,067/月 · 省 2 個月</div>
-        <a class="cta onhi buy" id="buy2" data-m="https://buy.recur.tw/2BmIPCHtS5zjtdet" data-y="https://buy.recur.tw/vGnHu5gdl2lRhNTx" href="https://buy.recur.tw/vGnHu5gdl2lRhNTx">開始使用</a>
-        <ul class="feat-list"><li>入門版全部功能</li><li><b>LINE＋蝦皮</b>跨平台一份知識</li><li>多帳號（最多 3 個）</li><li>看圖回覆・關鍵字圖卡</li><li>學店家口吻・時效感知</li><li>草稿與寄出全留存</li></ul>
+        <a class="cta primary buy" data-m="https://buy.recur.tw/2BmIPCHtS5zjtdet" data-y="https://buy.recur.tw/vGnHu5gdl2lRhNTx" href="https://buy.recur.tw/vGnHu5gdl2lRhNTx">開始使用</a>
+        <ul class="feat-list"><li>入門版全部功能</li><li><b>LINE＋蝦皮</b>共用一份店家資料</li><li>多帳號（最多 3 個）</li><li>看圖回覆・關鍵字圖卡</li><li>學店家口吻・時效感知</li><li>草稿與寄出全留存</li></ul>
       </div>
     </div>
 
@@ -232,8 +238,8 @@
       <div class="chcard">
         <h3>旗艦／代營運</h3>
         <div class="cprice" id="flagPrice">NT$26,800<span style="font-size:13px;font-weight:600">/年</span></div>
-        <div class="cp">多帳號（≤10）、多席次、白手套導入、優先支援。適合連鎖、多品牌、代營運。</div>
-        <a class="buy" id="buy3" data-m="https://buy.recur.tw/YYhOp3HxPioRmEhZ" data-y="https://buy.recur.tw/xQdJQQHELnYkLF5c" href="https://buy.recur.tw/xQdJQQHELnYkLF5c">開始使用 →</a>
+        <div class="cp">多人輪班、多間分店。多帳號（≤10）、多席次、白手套導入、優先支援。</div>
+        <a class="buy" data-m="https://buy.recur.tw/YYhOp3HxPioRmEhZ" data-y="https://buy.recur.tw/xQdJQQHELnYkLF5c" href="https://buy.recur.tw/xQdJQQHELnYkLF5c">開始使用 →</a>
       </div>
       <div class="chcard"><h3>經銷商方案</h3><div class="cp">談一批席次配給你底下的商家統一管理——後台看每家用量、一鍵開通停用。適合代理商、系統商、社群團主。</div><a href="#contact">洽談批發席次 →</a></div>
       <div class="chcard"><h3>推廣夥伴</h3><div class="cp">幫我們推薦商家、拿專屬邀請碼。每成交一個抽一份，你推薦的商家也拿優惠。</div><a href="#contact">成為推廣夥伴 →</a></div>
@@ -241,31 +247,32 @@
   </div>
 </section>
 
-<section>
+<section style="padding-top:0">
   <div class="wrap">
     <div class="eyebrow">常見問題</div>
-    <h2 class="faq" style="margin-bottom:20px">還有點猶豫？</h2>
+    <h2 style="margin-bottom:22px">還有點猶豫？</h2>
     <div class="faq">
-      <details open><summary>AI 會不會亂回、報錯價格？</summary><p>不會，這是核心設計。AI 只照你設定的店家知識回答，沒有的就說「幫您確認一下」交還給你，絕不自己編價格、時間或承諾。過期優惠也會自動略過。</p></details>
+      <details open><summary>AI 會不會亂回、報錯價格？</summary><p>不會，這是核心設計。AI 只照你的店家資料回答，沒有的就標「留給你」交回給你，絕不自己編價格、時間或承諾。過期優惠也會自動略過。</p></details>
       <details><summary>需要技術背景嗎？</summary><p>不用。裝 Chrome 擴充、打開你的後台、按一下「掃描」，AI 就會讀過去對話學會你的店。全程約一分鐘，不用寫任何設定。</p></details>
-      <details><summary>我的客人對話會外洩嗎？</summary><p>不會。每個商家的對話以獨立金鑰加密，連我們都讀不到內容；店家知識只有你能改。</p></details>
-      <details><summary>可以先試再決定嗎？</summary><p>可以。裝上直接是 7 天訪客體驗（每日 50 則）免註冊；想留資料就轉正、送 14 天全功能試用，訪客期間教 AI 的知識完整保留、不用重教。</p></details>
-      <details><summary>付款後怎麼開通？</summary><p>線上刷卡付款完成後，系統會 Email 寄一組兌換碼給你；在擴充裡輸入即開通，不用等人工。月繳隨時可停。</p></details>
+      <details><summary>我的客人對話會外洩嗎？</summary><p>不會。每個商家的對話以獨立金鑰加密，連我們都讀不到內容；店家資料只有你能改。</p></details>
+      <details><summary>可以先試再決定嗎？</summary><p>可以。裝上直接是 7 天訪客體驗（每日 50 則）免註冊；想留資料就轉正、送 14 天全功能試用，訪客期間教 AI 的資料完整保留、不用重教。</p></details>
+      <details><summary>付款後怎麼開通？</summary><p>用你註冊的 Email 線上刷卡，付款完成自動開通、馬上能用。月繳隨時可停，由 Recur（PAYUNi）安全處理，我們不接觸你的卡號。</p></details>
     </div>
   </div>
 </section>
 
-<section id="final"><div class="wrap"><div class="final">
-  <h2>今晚的客人訊息，交給不會闖禍的 AI</h2>
-  <p>免費裝、免註冊、一分鐘上手。答不出的它不瞎掰——這是你能放心睡的原因。</p>
-  <a class="bigcta" href="#" id="installBtn">免費安裝擴充</a>
+<section id="final" style="padding-top:0"><div class="wrap"><div class="final">
+  <h2>今晚的客人訊息，<br>交給不會闖禍的 AI</h2>
+  <p>免費裝、免註冊、一分鐘上手。它不確定的事會標「留給你」——這是你能放心睡的原因。</p>
+  <a class="bigcta" href="#" id="installBtn">免費加入 Chrome</a>
 </div></div></section>
 
-<footer id="contact">
-  <b>客＋人</b> · LINE．蝦皮 客服 AI｜答不出不亂編<br>
-  經銷／推廣洽談・技術支援　→　（部署後填你的聯絡方式：LINE / Email）<br>
-  <span style="opacity:.7">付款由 Recur 處理，可隨時取消。</span>
-</footer>
+<footer id="contact"><div class="foot-in">
+  <span class="brand" style="font-size:14px"><svg class="logo" style="width:26px;height:26px" viewBox="0 0 40 40"><use href="#kmark"/></svg>客＋人</span>
+  <span>© 2026 客＋人 · LINE．蝦皮 客服 AI｜答不出，不亂編</span>
+  <span class="sp"></span>
+  <a href="privacy.html">隱私權政策</a>
+</div></footer>
 
 <script>
   function setBill(m){
@@ -273,15 +280,14 @@
     document.getElementById('tY').classList.toggle('on',yr);
     document.getElementById('tM').classList.toggle('on',!yr);
     document.querySelectorAll('.num[data-y]').forEach(function(n){n.textContent=yr?n.dataset.y:n.dataset.m;});
-    document.getElementById('per1').textContent=yr?'/年':'/月';
-    document.getElementById('per2').textContent=yr?'/年':'/月';
+    document.querySelectorAll('.per1').forEach(function(p){p.textContent=yr?'/年':'/月';});
     document.getElementById('save1').textContent=yr?'約 NT$492/月 · 省 2 個月':'月繳彈性，年繳更省';
     document.getElementById('save2').textContent=yr?'約 NT$1,067/月 · 省 2 個月':'月繳彈性，年繳更省';
-    document.getElementById('saveHint').textContent=yr?'年繳最省 · 省 2 個月':'月繳無綁約';
+    document.getElementById('saveHint').textContent=yr?'年繳＝10 個月價，現省 2 個月':'月繳無綁約，隨時可停';
     document.getElementById('flagPrice').innerHTML=yr?'NT$26,800<span style="font-size:13px;font-weight:600">/年</span>':'NT$2,680<span style="font-size:13px;font-weight:600">/月</span>';
     document.querySelectorAll('a.buy').forEach(function(a){a.href=yr?a.dataset.y:a.dataset.m;});
   }
-  document.getElementById('installBtn').addEventListener('click',function(e){e.preventDefault();alert('部署時把這顆按鈕連到你的擴充下載頁 / Chrome 線上應用程式商店');});
+  document.getElementById('installBtn').addEventListener('click',function(e){e.preventDefault();alert('上架審核中——正式 Chrome 商店連結核准後接上');});
 </script>
 </body>
 </html>

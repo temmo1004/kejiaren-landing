@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隱私權政策 · 客＋人</title>
+<style>
+  :root{--ink:#14201A;--mut:#5E6E63;--green:#2E5540;--bg:#F3F5F0;--paper:#FFF;--line:#E1E8E1}
+  @media(prefers-color-scheme:dark){:root{--ink:#E8EFE6;--mut:#93A598;--green:#8FD3A0;--bg:#0F150E;--paper:#171F17;--line:#25322A}}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang TC","Noto Sans TC",system-ui,sans-serif;line-height:1.8}
+  main{max-width:720px;margin:0 auto;padding:48px 22px}
+  h1{color:var(--green);font-size:26px} h2{color:var(--green);font-size:17px;margin-top:34px}
+  p,li{font-size:14.5px} .mut{color:var(--mut);font-size:13px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:6px 20px;margin:14px 0}
+  a{color:var(--green)}
+</style>
+</head>
+<body>
+<main>
+<h1>客＋人 隱私權政策</h1>
+<p class="mut">適用產品：「客＋人」Chrome 擴充功能與其雲端服務（LINE．蝦皮 客服 AI）。最後更新：2026-07-09</p>
+
+<h2>一、我們的單一目的</h2>
+<p>客＋人只做一件事：協助商家在自己的 LINE 官方帳號後台（chat.line.biz）與蝦皮賣家後台（seller.shopee.tw）撰寫客服回覆草稿。所有資料的蒐集與處理都僅為此目的。</p>
+
+<h2>二、我們處理哪些資料</h2>
+<div class="card"><ul>
+<li><b>店家知識</b>：您主動輸入或掃描產生的店家問答知識（價格、營業資訊等）。</li>
+<li><b>客服對話內容</b>：您在後台開啟的對話文字，於您按下「生文案」「掃描」時讀取，用於生成回覆草稿與整理知識。</li>
+<li><b>帳號資訊</b>：您註冊時提供的 Email；訪客模式則只有隨機識別碼。</li>
+<li><b>使用統計</b>：草擬次數、答不出次數等匿名計數，用於額度管理與服務改善。</li>
+</ul></div>
+
+<h2>三、我們如何保護資料</h2>
+<ul>
+<li>每個商家的對話資料以<b>商家專屬金鑰</b>加密儲存（per-tenant encryption），我們的營運人員無法直接讀取內容。</li>
+<li>資料庫採列級安全（Row-Level Security）隔離，商家只能存取自己的資料。</li>
+<li>傳輸全程 HTTPS 加密。</li>
+</ul>
+
+<h2>四、資料會傳給誰</h2>
+<div class="card"><ul>
+<li><b>AI 模型服務</b>（OpenAI／DeepSeek）：生成草稿時，相關對話片段與店家知識會傳送給 AI 模型處理。不用於模型訓練。</li>
+<li><b>金流</b>（Recur／PAYUNi）：付款由 Recur 處理，我們不接觸、不儲存您的卡號。</li>
+<li><b>Email</b>（Resend）：僅用於寄送開通碼與帳號通知。</li>
+</ul></div>
+<p><b>我們不出售資料、不投放廣告、不與無關第三方分享您的任何資料。</b></p>
+
+<h2>五、資料保存與刪除</h2>
+<ul>
+<li>店家知識與帳號資料在您使用期間保存。</li>
+<li>您可隨時來信要求刪除帳號與全部資料，我們會在 30 天內完成。</li>
+<li>訪客帳號到期後，其資料於合理期間內清除。</li>
+</ul>
+
+<h2>六、擴充功能權限說明</h2>
+<div class="card"><ul>
+<li><code>storage</code>：在您的瀏覽器本機儲存登入狀態與設定。</li>
+<li><code>activeTab／scripting</code>：僅在您使用的 LINE／蝦皮後台分頁注入功能按鈕。</li>
+<li><code>chat.line.biz／seller.shopee.tw</code>：在這兩個後台頁面提供草擬與掃描功能。</li>
+<li><code>linebiz-kernel.zeabur.app</code>：與我們的雲端服務通訊（知識儲存、草稿生成）。</li>
+</ul></div>
+<p>擴充不會讀取上述站點以外的任何網頁，也不追蹤您的瀏覽紀錄。</p>
+
+<h2>七、聯絡我們</h2>
+<p>任何隱私相關問題或資料刪除請求，請來信：<a href="mailto:noreply@404table.com">noreply@404table.com</a></p>
+<p class="mut"><a href="./">← 回到客＋人首頁</a></p>
+</main>
+</body>
+</html>

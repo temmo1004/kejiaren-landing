@@ -130,7 +130,7 @@
   <span class="sp"></span>
   <a class="plain" href="#promise">為什麼</a>
   <a class="plain" href="#pricing">方案定價</a>
-  <a class="btn" href="#final">免費加入 Chrome</a>
+  <a class="btn" href="https://chromewebstore.google.com/detail/ikaeacbpmjkaddigkhkacgnmfgohpkoi" target="_blank" rel="noopener">免費加入 Chrome</a>
 </div></nav>
 
 <header class="hero wrap">
@@ -138,7 +138,7 @@
   <h1>回覆訊息，<br>AI <span class="hl">先擬好草稿</span>。</h1>
   <p>客＋人讀懂你的商品、價格和規則，替你寫好每一則客服回覆。它不確定的事，會老實標出來交回給你——不會替你的店亂承諾。</p>
   <div class="cbtns">
-    <a class="bigcta" href="#final">免費加入 Chrome</a>
+    <a class="bigcta" href="https://chromewebstore.google.com/detail/ikaeacbpmjkaddigkhkacgnmfgohpkoi" target="_blank" rel="noopener">免費加入 Chrome</a>
     <a class="bigcta sec" href="#pricing">查看方案</a>
   </div>
   <div class="trust">免註冊、裝上就能用。免費版每天 50 則草稿。</div>
@@ -217,7 +217,7 @@
         <div class="pname">免費版</div><div class="pline">先試試，順手再說。</div>
         <div class="price"><span class="cur">NT$</span><span class="num">0</span></div>
         <div class="save">免註冊，裝上就能用</div>
-        <a class="cta ghost" href="#final">免費安裝</a>
+        <a class="cta ghost" href="https://chromewebstore.google.com/detail/ikaeacbpmjkaddigkhkacgnmfgohpkoi" target="_blank" rel="noopener">免費安裝</a>
         <ul class="feat-list"><li>每日 80 則 AI 草稿</li><li>LINE 或蝦皮 1 個帳號</li><li>掃描／貼上／貼網址 建知識</li><li>答不出不亂編（核心防護）</li><li>7 天訪客體驗，隨時轉正</li></ul>
       </div>
       <div class="card">
@@ -267,7 +267,7 @@
 <section id="final" style="padding-top:0"><div class="wrap"><div class="final">
   <h2>今晚的客人訊息，<br>交給不會闖禍的 AI</h2>
   <p>免費裝、免註冊、一分鐘上手。它不確定的事會標「留給你」——這是你能放心睡的原因。</p>
-  <a class="bigcta" href="#" id="installBtn">免費加入 Chrome</a>
+  <a class="bigcta" href="https://chromewebstore.google.com/detail/ikaeacbpmjkaddigkhkacgnmfgohpkoi" target="_blank" rel="noopener" id="installBtn">免費加入 Chrome</a>
 </div></div></section>
 
 <footer id="contact"><div class="foot-in">
@@ -290,7 +290,7 @@
     document.getElementById('flagPrice').innerHTML=yr?'NT$26,800<span style="font-size:13px;font-weight:600">/年</span>':'NT$2,680<span style="font-size:13px;font-weight:600">/月</span>';
     document.querySelectorAll('a.buy').forEach(function(a){a.href=yr?a.dataset.y:a.dataset.m;});
   }
-  document.getElementById('installBtn').addEventListener('click',function(e){e.preventDefault();alert('上架審核中——正式 Chrome 商店連結核准後接上');});
+  // installBtn 已直接連到 Chrome 商店(上架完成)
   // 從擴充帶 #pay=<email> 進來:鎖定結帳 Email(付款頁用同一個才自動開通),自動複製+置頂橫幅
   (function(){
     var m=(location.hash||'').match(/pay=([^&]+)/); if(!m) return;

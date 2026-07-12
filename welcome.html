@@ -63,9 +63,10 @@
   @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
   @media(prefers-reduced-motion:reduce){.tbmock .ic.pin:after{animation:none;opacity:.8}}
   .tbmock .lbl{font-size:12.5px;font-weight:800;color:var(--brand);white-space:nowrap}
-  .pointtop{position:fixed;top:4px;right:16px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:1px;pointer-events:none;animation:bob 1.35s ease-in-out infinite}
-  .pointtop .ar{font-size:32px;line-height:1;filter:drop-shadow(0 2px 3px rgba(14,59,36,.3))}
-  .pointtop .bb{background:var(--brand);color:#fff;font-size:12.5px;font-weight:800;line-height:1.45;padding:8px 13px;border-radius:13px;box-shadow:var(--shadow-hi);max-width:196px;text-align:right}
+  .pointtop{position:fixed;top:6px;right:14px;left:auto;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:2px;pointer-events:none;animation:bob 1.35s ease-in-out infinite;max-width:calc(100vw - 28px)}
+  .pointtop .ar{font-size:30px;line-height:1;margin-right:6px;filter:drop-shadow(0 2px 3px rgba(14,59,36,.3))}
+  .pointtop .bb{background:var(--brand);color:#fff;font-size:12.5px;font-weight:800;line-height:1.65;padding:9px 14px;border-radius:13px;box-shadow:var(--shadow-hi);width:max-content;max-width:min(230px,calc(100vw - 28px));text-align:right}
+  .pointtop .bb .mini{vertical-align:-6px;border-radius:5px;margin:0 2px}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
   @media(prefers-reduced-motion:reduce){.pointtop{animation:none}}
   @media(max-width:560px){.pointtop{display:none}}
@@ -74,7 +75,7 @@
 <body>
   <div class="pointtop" aria-hidden="true">
     <div class="ar">👆</div>
-    <div class="bb">你的「客＋人」圖示就在右上角<br>點它一下就免費開通</div>
+    <div class="bb">右上角工具列，找 <img class="mini" src="./icon48.png" width="22" height="22" alt=""><br>這顆圖示點一下就免費開通</div>
   </div>
   <div class="wrap">
     <div class="hero">

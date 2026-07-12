@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>安裝成功 · 客＋人 · 3 步開始用</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0E3B26">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3CclipPath id='s'%3E%3Crect width='40' height='40' rx='11'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23s)'%3E%3Crect width='40' height='40' rx='11' fill='%2317734A'/%3E%3Crect x='7' y='30' width='12' height='27' rx='6' fill='%23F6F3EA'/%3E%3Crect x='21' y='33' width='12' height='27' rx='6' fill='%23C9E86F'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Chocolate+Classical+Sans&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F1EFE4;--paper:#FFF;--ink:#1C2B22;--mut:#6B685C;--line:#E3DECE;
+    --brand:#17734A;--brand-dk:#0E4A2E;--deep:#0E3B26;--lime:#C9E86F;--cream:#F7F0DC;--gold-ink:#9A6B12;
+    --shadow:0 1px 2px rgba(14,59,36,.06),0 10px 34px rgba(14,59,36,.08);
+    --shadow-hi:0 8px 20px rgba(14,59,36,.22),0 26px 60px rgba(14,59,36,.24);
+    --sans:"Noto Sans TC","PingFang TC",system-ui,sans-serif;--disp:"Chocolate Classical Sans","Noto Sans TC",sans-serif;
+  }
+  @media(prefers-color-scheme:dark){:root{--bg:#101710;--paper:#182118;--ink:#EAF1E6;--mut:#93A392;--line:#26332A;--cream:#25301E;--gold-ink:#D8C68A;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.35);--shadow-hi:0 8px 20px rgba(0,0,0,.5),0 26px 60px rgba(0,0,0,.5)}}
+  :root[data-theme="light"]{--bg:#F1EFE4;--paper:#FFF;--ink:#1C2B22;--mut:#6B685C;--line:#E3DECE;--cream:#F7F0DC;--gold-ink:#9A6B12}
+  :root[data-theme="dark"]{--bg:#101710;--paper:#182118;--ink:#EAF1E6;--mut:#93A392;--line:#26332A;--cream:#25301E;--gold-ink:#D8C68A}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  .hero{text-align:center;padding:64px 0 20px}
+  .logo{width:56px;height:56px;margin:0 auto}
+  .pill{display:inline-block;background:color-mix(in srgb,var(--lime) 32%,var(--bg));color:var(--brand-dk);border:1px solid color-mix(in srgb,var(--lime) 60%,var(--line));font-size:13px;font-weight:800;padding:7px 18px;border-radius:999px;margin-top:20px}
+  @media(prefers-color-scheme:dark){.pill{color:var(--lime)}}
+  h1{font-family:var(--disp);font-size:clamp(28px,5.4vw,42px);font-weight:900;line-height:1.2;margin-top:18px;text-wrap:balance}
+  h1 .hl{color:var(--brand)}
+  .lede{font-size:16px;color:var(--ink);opacity:.82;max-width:44ch;margin:16px auto 0}
+  .steps{display:grid;gap:14px;margin:40px 0}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;box-shadow:var(--shadow);text-align:left}
+  .num{flex:none;width:36px;height:36px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;font-size:17px;display:grid;place-items:center;font-family:var(--disp)}
+  .step h3{font-size:17px;font-weight:800;margin-bottom:4px}
+  .step p{font-size:14.5px;color:var(--mut)}
+  .step .k{display:inline-block;background:var(--cream);color:var(--gold-ink);border-radius:7px;padding:1px 8px;font-weight:700;font-size:13px;margin:0 1px}
+  .platstrip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin:6px 0 34px}
+  .platstrip .in{display:flex;gap:8px 22px;justify-content:center;flex-wrap:wrap;font-size:14px;font-weight:700;color:var(--mut)}
+  .platstrip b{color:var(--ink)}
+  .promise{background:color-mix(in srgb,var(--brand) 7%,var(--paper));border:1px solid color-mix(in srgb,var(--brand) 18%,var(--line));border-radius:16px;padding:22px 24px;margin-bottom:34px}
+  .promise h3{font-family:var(--disp);font-size:19px;font-weight:850;text-align:center;margin-bottom:14px}
+  .promise ul{list-style:none;display:grid;gap:9px;max-width:38ch;margin:0 auto}
+  .promise li{font-size:14.5px;padding-left:26px;position:relative}
+  .promise li:before{content:"✓";position:absolute;left:0;color:var(--brand);font-weight:900}
+  .cbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:8px 0 20px}
+  .bigcta{background:var(--brand);color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:14px 26px;border-radius:13px;box-shadow:var(--shadow-hi);transition:.15s}
+  .bigcta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .bigcta.sec{background:var(--paper);color:var(--ink);box-shadow:var(--shadow);border:1.5px solid var(--line)}
+  .foot{text-align:center;color:var(--mut);font-size:13px;padding:28px 0 48px}
+  .foot a{color:var(--brand);font-weight:700}
+  .tip{text-align:center;font-size:13px;color:var(--mut);margin-top:-8px;margin-bottom:26px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <svg class="logo" viewBox="0 0 40 40"><clipPath id="s"><rect width="40" height="40" rx="11"/></clipPath><g clip-path="url(#s)"><rect width="40" height="40" rx="11" fill="#17734A"/><rect x="7" y="13" width="12" height="27" rx="6" fill="#F6F3EA"/><rect x="21" y="16" width="12" height="27" rx="6" fill="#C9E86F"/></g></svg>
+      <div class="pill">🎉 安裝成功</div>
+      <h1>歡迎用 <span class="hl">客＋人</span><br>三步就能開始擬回覆</h1>
+      <p class="lede">在你的客服後台加一顆「生文案」按鈕。AI 用你教它的店家知識草擬回覆，<b>答不出的老實標出來，絕不替你亂承諾</b>。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div>
+          <h3>打開你任一個客服後台</h3>
+          <p>LINE 官方帳號、蝦皮賣家聊聊、Facebook／Instagram 私訊，或 Meta Business Suite 收件匣。<b>免註冊，直接以訪客身分體驗</b>——按鈕會自動出現在頁面上。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div>
+          <h3>按一下「掃描」或「匯入回覆範本」</h3>
+          <p>AI 讀你過去的對話、以及你在蝦皮／Meta 設好的<span class="k">罐頭回覆</span>，自動整理成店家知識並學會你的說話口吻。做一次就好。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div>
+          <h3>開任何客人對話，按 <span class="k">✍️ 生文案</span></h3>
+          <p>回覆草稿直接填進輸入框——你看過、改過，<b>按送出的還是你</b>。想知道誰還沒回？問一下就有「誰沒回」清單。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="platstrip"><div class="in">支援：<b>LINE</b> · <b>蝦皮</b> · <b>Messenger</b> · <b>Instagram</b> · <b>Meta Business Suite</b></div></div>
+
+    <div class="promise">
+      <h3>為什麼跟平台內建 AI 不一樣</h3>
+      <ul>
+        <li>答不出的問題 → 說「幫您確認」交還給你，絕不自己編</li>
+        <li>過期的優惠 → 自動略過不報，不拿舊價格坑客人</li>
+        <li>回覆口吻 → 學你的說話方式，不是機器人官腔</li>
+        <li>送出前 → 你核可才送出</li>
+        <li>跨平台 → 五個後台共用同一份店家知識</li>
+      </ul>
+    </div>
+
+    <div class="cbtns">
+      <a class="bigcta" href="https://chat.line.biz/" target="_blank" rel="noopener">打開 LINE 後台開始 →</a>
+      <a class="bigcta sec" href="./index.html">看完整介紹</a>
+    </div>
+    <p class="tip">💡 找不到按鈕？把客服後台分頁「重新整理」一次即可。</p>
+
+    <div class="foot">
+      免費版每日 50 則，免註冊。有問題 → <a href="./index.html#contact">聯絡我們</a> · <a href="./privacy.html">隱私政策</a>
+    </div>
+  </div>
+  <script>
+    // 跟隨系統／landing 主題(若有存)；容錯,壞了不影響頁面
+    try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}
+  </script>
+</body>
+</html>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>安裝成功 · 客＋人 · 3 步開始用</title>
+<title>安裝成功 · 客＋人 · 開始使用</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0E3B26">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3CclipPath id='s'%3E%3Crect width='40' height='40' rx='11'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23s)'%3E%3Crect width='40' height='40' rx='11' fill='%2317734A'/%3E%3Crect x='7' y='30' width='12' height='27' rx='6' fill='%23F6F3EA'/%3E%3Crect x='21' y='33' width='12' height='27' rx='6' fill='%23C9E86F'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="./icon128.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Chocolate+Classical+Sans&display=swap" rel="stylesheet">
@@ -52,34 +52,58 @@
   .foot{text-align:center;color:var(--mut);font-size:13px;padding:28px 0 48px}
   .foot a{color:var(--brand);font-weight:700}
   .tip{text-align:center;font-size:13px;color:var(--mut);margin-top:-8px;margin-bottom:26px}
+  .step.first{border-color:color-mix(in srgb,var(--brand) 42%,var(--line));background:color-mix(in srgb,var(--brand) 6%,var(--paper));box-shadow:var(--shadow-hi)}
+  .step.first .num{background:var(--brand);box-shadow:0 0 0 4px color-mix(in srgb,var(--brand) 22%,transparent)}
+  .tbmock{display:flex;align-items:center;gap:7px;background:color-mix(in srgb,var(--ink) 8%,var(--paper));border:1px solid var(--line);border-radius:12px;padding:9px 11px;margin-top:14px;max-width:340px}
+  .tbmock .u{flex:1;height:22px;border-radius:20px;background:color-mix(in srgb,var(--ink) 5%,#fff)}
+  .tbmock .ic{width:28px;height:28px;border-radius:7px;display:grid;place-items:center;font-size:15px;flex:none;background:color-mix(in srgb,var(--ink) 9%,transparent)}
+  .tbmock .ic.pin{background:transparent;position:relative}
+  .tbmock .ic.pin img{display:block;border-radius:6px}
+  .tbmock .ic.pin:after{content:"";position:absolute;inset:-4px;border:2.5px dashed var(--brand);border-radius:11px;animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+  @media(prefers-reduced-motion:reduce){.tbmock .ic.pin:after{animation:none;opacity:.8}}
+  .tbmock .lbl{font-size:12.5px;font-weight:800;color:var(--brand);white-space:nowrap}
 </style>
 </head>
 <body>
   <div class="wrap">
     <div class="hero">
-      <svg class="logo" viewBox="0 0 40 40"><clipPath id="s"><rect width="40" height="40" rx="11"/></clipPath><g clip-path="url(#s)"><rect width="40" height="40" rx="11" fill="#17734A"/><rect x="7" y="13" width="12" height="27" rx="6" fill="#F6F3EA"/><rect x="21" y="16" width="12" height="27" rx="6" fill="#C9E86F"/></g></svg>
+      <img class="logo" src="./icon128.png" alt="客＋人" width="56" height="56">
       <div class="pill">🎉 安裝成功</div>
-      <h1>歡迎用 <span class="hl">客＋人</span><br>三步就能開始擬回覆</h1>
+      <h1>歡迎用 <span class="hl">客＋人</span><br>點一下就能開始擬回覆</h1>
       <p class="lede">在你的客服後台加一顆「生文案」按鈕。AI 用你教它的店家知識草擬回覆，<b>答不出的老實標出來，絕不替你亂承諾</b>。</p>
     </div>
 
     <div class="steps">
-      <div class="step">
+      <div class="step first">
         <div class="num">1</div>
+        <div>
+          <h3>點右上角的「客＋人」圖示 → 免費開通</h3>
+          <p>第一次點圖示，系統就<b>自動幫你建立訪客帳號</b>（免註冊、每日 50 則）。<br>找不到圖示？點工具列的 <span class="k">🧩 擴充功能</span> → 把「客＋人」旁的圖釘 📌 點亮，圖示就會固定在右上角。</p>
+          <div class="tbmock" aria-hidden="true">
+            <div class="u"></div>
+            <div class="ic">🧩</div>
+            <div class="ic pin"><img src="./icon48.png" width="22" height="22" alt=""></div>
+            <div class="lbl">← 點我</div>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
         <div>
           <h3>打開你任一個客服後台</h3>
           <p>LINE 官方帳號、蝦皮賣家聊聊、Facebook／Instagram 私訊，或 Meta Business Suite 收件匣。<b>免註冊，直接以訪客身分體驗</b>——按鈕會自動出現在頁面上。</p>
         </div>
       </div>
       <div class="step">
-        <div class="num">2</div>
+        <div class="num">3</div>
         <div>
           <h3>按一下「掃描」或「匯入回覆範本」</h3>
           <p>AI 讀你過去的對話、以及你在蝦皮／Meta 設好的<span class="k">罐頭回覆</span>，自動整理成店家知識並學會你的說話口吻。做一次就好。</p>
         </div>
       </div>
       <div class="step">
-        <div class="num">3</div>
+        <div class="num">4</div>
         <div>
           <h3>開任何客人對話，按 <span class="k">✍️ 生文案</span></h3>
           <p>回覆草稿直接填進輸入框——你看過、改過，<b>按送出的還是你</b>。想知道誰還沒回？問一下就有「誰沒回」清單。</p>

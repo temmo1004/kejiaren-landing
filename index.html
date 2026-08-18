@@ -54,6 +54,25 @@
   .bigcta:hover{filter:brightness(1.07);transform:translateY(-1px)}
   .bigcta.sec{background:var(--paper);color:var(--ink);box-shadow:var(--shadow);border:1.5px solid var(--line)}
   .trust{margin-top:18px;font-size:13px;color:var(--mut);font-weight:600}
+  .hero-in{display:grid;grid-template-columns:1.04fr .96fr;gap:46px;align-items:center;text-align:left}
+  .hero-in .hero-copy p{margin:20px 0 0}
+  .hero-in .cbtns{justify-content:flex-start}
+  @media(max-width:900px){.hero-in{grid-template-columns:1fr;text-align:center}.hero-in .hero-copy p{margin:20px auto 0}.hero-in .cbtns{justify-content:center}}
+  .chatcard{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-hi);overflow:hidden;max-width:440px;margin-inline:auto;text-align:left;width:100%}
+  .chatcard .chead{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);font-size:12.5px;font-weight:800;color:var(--mut)}
+  .chatcard .dotg{width:8px;height:8px;border-radius:50%;background:var(--lime-dk);flex:none}
+  .chatbody{padding:16px;display:flex;flex-direction:column;gap:10px;font-size:13.5px}
+  .bub{max-width:88%;padding:10px 14px;border-radius:14px;line-height:1.65}
+  .bub.user{background:color-mix(in srgb,var(--line) 45%,var(--paper));border-bottom-left-radius:4px;align-self:flex-start}
+  .bub.ai{background:color-mix(in srgb,var(--lime) 24%,var(--paper));border:1px solid color-mix(in srgb,var(--lime) 48%,var(--line));border-bottom-right-radius:4px;align-self:flex-end}
+  .bub .blab{display:block;font-size:11px;font-weight:800;color:var(--brand);margin-bottom:3px;letter-spacing:.04em}
+  .holdrow{align-self:flex-end;max-width:88%;background:var(--cream);border:1px dashed color-mix(in srgb,var(--gold-ink) 45%,var(--line));color:var(--gold-ink);font-size:12.5px;font-weight:700;padding:9px 13px;border-radius:12px;line-height:1.6}
+  .chatfoot{display:flex;gap:8px;padding:0 16px 16px;justify-content:flex-end;align-items:center}
+  .chatfoot .fnote{font-size:11.5px;color:var(--mut);margin-right:auto}
+  .chatfoot .fbtn{font-size:12.5px;font-weight:800;border-radius:9px;padding:7px 14px;border:1px solid var(--line);color:var(--mut)}
+  .chatfoot .fbtn.go{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .split2{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+  @media(max-width:860px){.split2{grid-template-columns:1fr}}
   .platstrip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin-top:52px}
   .platstrip .in{display:flex;gap:10px 30px;justify-content:center;flex-wrap:wrap;font-size:13.5px;font-weight:700;color:var(--mut)}
   .platstrip b{color:var(--ink)}
@@ -135,18 +154,31 @@
 </div></nav>
 
 <header class="hero wrap">
-  <span class="pill">給台灣中小商家的 AI 客服幫手</span>
-  <h1>電腦開著就好，<br>訊息它 <span class="hl">先幫你回</span>。</h1>
-  <p>你人在外面用手機，家裡那台電腦幫你把整天的聊聊處理掉。要它擬好等你按、還是直接送出，你決定。答不出的它會老實標出來——不會替你的店亂承諾。</p>
-  <div class="cbtns">
-    <a class="bigcta" href="https://chromewebstore.google.com/detail/ikaeacbpmjkaddigkhkacgnmfgohpkoi" target="_blank" rel="noopener">免費加入 Chrome</a>
-    <a class="bigcta sec" href="#pricing">查看方案</a>
+  <div class="hero-in">
+    <div class="hero-copy">
+      <span class="pill">給台灣中小商家的 AI 客服幫手</span>
+      <h1>電腦開著就好，<br>訊息它 <span class="hl">先幫你回</span>。</h1>
+      <p>你人在外面用手機，家裡那台電腦幫你把整天的聊聊處理掉。要它擬好等你按、還是直接送出，你決定。答不出的它會老實標出來——不會替你的店亂承諾。</p>
+      <div class="cbtns">
+        <a class="bigcta" href="https://chromewebstore.google.com/detail/ikaeacbpmjkaddigkhkacgnmfgohpkoi" target="_blank" rel="noopener">免費加入 Chrome</a>
+        <a class="bigcta sec" href="#pricing">查看方案</a>
+      </div>
+      <div class="trust">免註冊、裝上就能用。免費版每天 50 則草稿。<br>需要電腦與 Chrome 分頁保持開啟——電腦睡眠或關掉分頁就會暫停，重開就繼續。</div>
+    </div>
+    <div class="chatcard" aria-label="產品示範：AI 草稿與留給你標記">
+      <div class="chead"><span class="dotg"></span>你的 LINE 官方帳號 · 聊聊（示範）</div>
+      <div class="chatbody">
+        <div class="bub user">明天還有草莓大福嗎？想訂 2 盒，可以宅配嗎？</div>
+        <div class="bub ai"><span class="blab">AI 草稿——照你的店家資料寫</span>有的，明天有做草莓大福，一盒 6 入 NT$220，幫您留 2 盒沒問題！</div>
+        <div class="holdrow">✋ 留給你：宅配規則你的資料裡沒寫——它不猜，這句由你決定怎麼回。</div>
+      </div>
+      <div class="chatfoot"><span class="fnote">擬好等你按，或設自動送出</span><span class="fbtn">改一下</span><span class="fbtn go">送出</span></div>
+    </div>
   </div>
-  <div class="trust">免註冊、裝上就能用。免費版每天 50 則草稿。<br>需要電腦與 Chrome 分頁保持開啟——電腦睡眠或關掉分頁就會暫停，重開就繼續。</div>
 </header>
 
 <div class="platstrip"><div class="in wrap">
-  <span>在你原本的客服頁面直接用</span><b>LINE 官方帳號</b><b>蝦皮賣場</b>
+  <span>在你原本的客服頁面直接用</span><b>LINE 官方帳號</b><b>蝦皮賣場</b><b>Instagram</b><span>＋ Threads 海巡找客人</span>
 </div></div>
 
 <section>
@@ -209,8 +241,8 @@
     <h2>先免費試，覺得省心再付</h2>
     <p class="sec-lede">免費版免註冊、裝上就能用。付費方案月繳隨時可停。</p>
     <div class="toggle"><div class="pillbox">
-      <button id="tM" onclick="setBill('m')">月繳</button>
-      <button id="tY" class="on" onclick="setBill('y')">年繳</button>
+      <button id="tM" aria-pressed="false" onclick="setBill('m')">月繳</button>
+      <button id="tY" class="on" aria-pressed="true" onclick="setBill('y')">年繳</button>
       <span class="savehint" id="saveHint">年繳＝10 個月價，現省 2 個月</span>
     </div></div>
     <div class="plans">
@@ -253,10 +285,22 @@
 
 <section style="padding-top:0">
   <div class="wrap" style="padding-bottom:8px">
-    <div class="eyebrow">另一條腿</div>
-    <h2>不只回訊息——<br>海巡替你找客人</h2>
-    <p style="max-width:560px;line-height:1.8;margin:14px 0 18px">回訊息是守，海巡是攻：掛機時 AI 自動瀏覽 Threads，找到像你客人的貼文、用你的口吻留言——十則裡最多三則提到你的店，其餘純聊天，先當熟面孔再談生意。敏感貼文永不打擾，每一則後台可查。</p>
-    <a href="/patrol.html" style="font-weight:700">看海巡怎麼運作 →</a>
+    <div class="split2">
+      <div>
+        <div class="eyebrow" style="text-align:left">另一條腿</div>
+        <h2 style="text-align:left">不只回訊息——<br>海巡替你找客人</h2>
+        <p style="max-width:560px;line-height:1.8;margin:14px 0 18px">回訊息是守，海巡是攻：掛機時 AI 自動瀏覽 Threads，找到像你客人的貼文、用你的口吻留言——十則裡最多三則提到你的店，其餘純聊天，先當熟面孔再談生意。敏感貼文永不打擾，每一則後台可查。</p>
+        <a href="/patrol.html" style="font-weight:700">看海巡怎麼運作 →</a>
+      </div>
+      <div class="chatcard" aria-label="海巡示範：系統實際生成的留言">
+        <div class="chead"><span class="dotg"></span>Threads · 海巡（系統實際生成原文）</div>
+        <div class="chatbody">
+          <div class="bub user"><span class="blab" style="color:var(--mut)">陌生貼文</span>當老闆最崩潰的就是半夜還在回客人訊息，今天光聊聊就回了一百多則，出貨都沒時間弄…</div>
+          <div class="bub ai"><span class="blab">它用你的口吻留言</span>那種明明想趕快把貨包完，卻一直被對話視窗拉住的感覺真的很卡。看著手機通知跳個不停，會讓人懷疑自己到底是老闆還是客服。</div>
+        </div>
+        <div class="chatfoot"><span class="fnote">先當熟面孔，再談生意——敏感貼文永不打擾</span></div>
+      </div>
+    </div>
   </div>
 </section>
 <section>
@@ -293,6 +337,8 @@
     var yr = m==='y';
     document.getElementById('tY').classList.toggle('on',yr);
     document.getElementById('tM').classList.toggle('on',!yr);
+    document.getElementById('tY').setAttribute('aria-pressed',yr);
+    document.getElementById('tM').setAttribute('aria-pressed',!yr);
     document.querySelectorAll('.num[data-y]').forEach(function(n){n.textContent=yr?n.dataset.y:n.dataset.m;});
     document.querySelectorAll('.per1').forEach(function(p){p.textContent=yr?'/年':'/月';});
     document.getElementById('save1').textContent=yr?'約 NT$472/月 · 年繳 8 折':'月繳彈性，年繳更省';

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Threads 自動找客人・海巡獲客｜客加人</title>
+<meta name="description" content="Threads 海巡獲客——AI 自動找到像你客人的貼文，用你的口吻自動留言，把陌生人變私訊。掛機自動巡、敏感貼文永不打擾、每一則後台可查；LINE/IG 訊息自動回覆同一顆 AI 包辦。">
+<meta name="theme-color" content="#0E3B26">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F1EFE4; --paper:#FFFFFF; --ink:#1C2B22; --mut:#6B685C; --line:#E3DECE;
+    --brand:#17734A; --brand-dk:#0E4A2E; --deep:#0E3B26; --lime:#C9E86F; --lime-dk:#7FB84E;
+    --cream:#F7F0DC; --gold-ink:#9A6B12;
+    --sans:'Noto Sans TC',system-ui,-apple-system,sans-serif;
+    --shadow:0 1px 2px rgba(28,43,34,.06),0 10px 34px rgba(28,43,34,.08);
+  }
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101710;--paper:#182118;--ink:#EAF1E6;--mut:#93A392;--line:#26332A;--cream:#25301E;--gold-ink:#D8C68A;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.35)}}
+  :root[data-theme="dark"]{--bg:#101710;--paper:#182118;--ink:#EAF1E6;--mut:#93A392;--line:#26332A;--cream:#25301E;--gold-ink:#D8C68A;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 34px rgba(0,0,0,.35)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--brand);text-transform:uppercase;text-align:center}
+  h1{font-size:clamp(28px,6vw,42px);font-weight:900;line-height:1.35;text-align:center;margin:14px 0 12px}
+  h2{font-size:clamp(20px,4.5vw,26px);font-weight:900;line-height:1.4;margin:0 0 6px}
+  .sub{color:var(--mut);text-align:center;font-size:clamp(14px,3.5vw,16.5px);max-width:34em;margin:0 auto}
+  .hero{padding:64px 0 40px}
+  .cta{display:inline-block;background:var(--brand);color:#fff;font-weight:900;font-size:16.5px;
+       padding:15px 34px;border-radius:999px;text-decoration:none;box-shadow:var(--shadow);transition:transform .15s ease}
+  .cta:hover{transform:translateY(-2px)}
+  .cta.sub2{background:transparent;color:var(--brand);border:2px solid var(--brand);box-shadow:none}
+  .ctarow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:26px 0 8px}
+  .fine{font-size:12.5px;color:var(--mut);text-align:center}
+  section{padding:44px 0}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+  .vs h3{font-size:14px;font-weight:900;margin-bottom:10px}
+  .vs ul{list-style:none}
+  .vs li{font-size:14px;padding:7px 0;border-top:1px dashed var(--line);color:var(--mut)}
+  .vs .bad h3{color:var(--mut)}
+  .vs .good{border-color:var(--brand)}
+  .vs .good h3{color:var(--brand)}
+  .vs .good li{color:var(--ink)}
+  /* ── 分鏡示範（自動循環,每幕 3.2s × 5 幕 = 16s）── */
+  .demo{position:relative;min-height:340px}
+  .scene{position:absolute;inset:0;opacity:0;animation:sc 16s infinite;display:flex;flex-direction:column;gap:12px;justify-content:center}
+  .scene:nth-child(1){animation-delay:0s}.scene:nth-child(2){animation-delay:3.2s}
+  .scene:nth-child(3){animation-delay:6.4s}.scene:nth-child(4){animation-delay:9.6s}
+  .scene:nth-child(5){animation-delay:12.8s}
+  @keyframes sc{0%{opacity:0;transform:translateY(10px)}2.5%{opacity:1;transform:none}18.5%{opacity:1}21%{opacity:0;transform:translateY(-8px)}100%{opacity:0}}
+  .tag{align-self:flex-start;font-size:11.5px;font-weight:900;letter-spacing:.08em;color:var(--brand);
+       background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+  .post{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14px}
+  .post b{font-size:13px}
+  .ai{background:var(--cream);border:1px solid var(--lime-dk);border-radius:14px;padding:14px 16px;font-size:14px;position:relative}
+  .ai::before{content:"AI 海巡留言";position:absolute;top:-9px;right:12px;font-size:10.5px;font-weight:900;
+              background:var(--lime);color:var(--deep);border-radius:999px;padding:2px 10px}
+  .dots{display:flex;gap:6px;justify-content:center;margin-top:14px}
+  .dots i{width:6px;height:6px;border-radius:99px;background:var(--line);animation:dt 16s infinite}
+  .dots i:nth-child(1){animation-delay:0s}.dots i:nth-child(2){animation-delay:3.2s}
+  .dots i:nth-child(3){animation-delay:6.4s}.dots i:nth-child(4){animation-delay:9.6s}
+  .dots i:nth-child(5){animation-delay:12.8s}
+  @keyframes dt{0%{background:var(--line)}2.5%{background:var(--brand)}20%{background:var(--brand)}22%{background:var(--line)}100%{background:var(--line)}}
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.feat{grid-template-columns:1fr}}
+  .feat .card{padding:18px}
+  .feat h3{font-size:15px;font-weight:900;margin-bottom:6px}
+  .feat p{font-size:13.5px;color:var(--mut)}
+  .price{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .price .card{text-align:center;padding:18px 12px}
+  .price b{font-size:22px;display:block}
+  .price .card small{color:var(--mut);font-size:12px}
+  .price .hot{border-color:var(--brand);border-width:2px}
+  .steps li{margin:10px 0;font-size:15px}
+  .steps{list-style:none;counter-reset:s}
+  .steps li{counter-increment:s;display:flex;gap:12px;align-items:baseline}
+  .steps li::before{content:counter(s);flex:0 0 26px;height:26px;border-radius:99px;background:var(--brand);color:#fff;
+                    font-weight:900;font-size:13px;display:inline-flex;align-items:center;justify-content:center}
+  @media(prefers-reduced-motion:reduce){.scene{animation:none;opacity:0}.scene:first-child{opacity:1;position:relative}.dots{display:none}}
+  footer{padding:36px 0 48px;text-align:center;color:var(--mut);font-size:12.5px}
+  footer a{color:var(--mut)}
+  .honest{border-left:4px solid var(--lime-dk);background:var(--cream);border-radius:0 14px 14px 0;padding:14px 18px;font-size:14px}
+</style>
+</head>
+<body>
+
+<div class="wrap hero">
+  <p class="eyebrow">客加人・自動海巡</p>
+  <h1>Threads 海巡獲客：<br>你在忙，AI 替你找到正在發文求救的客人</h1>
+  <p class="sub">「訊息多到回不完」「有沒有人推薦工具」——每天都有人公開喊出你解決得了的問題。
+  自動海巡替你找到他們，用<b>你的口吻</b>留言，把陌生人變成私訊。</p>
+  <div class="ctarow">
+    <a class="cta" href="https://chromewebstore.google.com/detail/%E5%AE%A2%E5%8A%A0%E4%BA%BA/ikaeacbpmjkaddigkhkacgnmfgohpkoi" target="_blank" rel="noopener">到 Chrome 商店免費安裝</a>
+    <a class="cta sub2" href="#how">看它怎麼運作</a>
+  </div>
+  <p class="fine">安裝 Chrome 擴充，點一下就有訪客帳號，每月 50 點免費額度。</p>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">實際流程</p>
+    <h1 style="font-size:clamp(22px,5vw,30px)">從「學會你」到「替你收單」</h1>
+    <div class="demo">
+      <div class="scene">
+        <span class="tag">① 先學會你</span>
+        <div class="ai" style="--x:0">🧬 掃描你的公開回覆，或回答三個問題——AI 學會你的口吻、你想找什麼客人、什麼不碰。<br><b>先預覽、你按儲存才生效。</b></div>
+      </div>
+      <div class="scene">
+        <span class="tag">② 掛機自動巡</span>
+        <div class="ai">開著 Threads 首頁，它自己捲、自己看貼文、自己判斷「這個人像不像你的客人」。你可以去忙別的。</div>
+      </div>
+      <div class="scene">
+        <span class="tag">③ 用你的口吻留言</span>
+        <div class="post"><b>@shop_owner</b><br>當老闆最崩潰的就是半夜還在回客人訊息，今天光聊聊就回了一百多則，出貨都沒時間弄…</div>
+        <div class="ai">那種明明想趕快把貨包完，卻一直被對話視窗拉住的感覺真的很卡。看著手機通知跳個不停，會讓人懷疑自己到底是老闆還是客服。</div>
+      </div>
+      <div class="scene">
+        <span class="tag">④ 有人開口求，直接接</span>
+        <div class="post"><b>@seek_help</b><br>真心求推薦客服機器人，LINE 和 IG 訊息爆炸，最好可以自動回常見問題</div>
+        <div class="ai">我們就是做這個的，專門幫小商家處理自動回覆，把時間省下來做更有價值的事。有興趣的話歡迎私訊聊聊你的需求。</div>
+      </div>
+      <div class="scene">
+        <span class="tag">⑤ 有人回留言 → 自動跟進收單</span>
+        <div class="post"><b>@shop_owner</b> 回覆了你：<br>真的！你們是做什麼的？有辦法解決嗎</div>
+        <div class="ai">@shop_owner 我們是做簡易客服自動化工具的團隊，專門幫小商家自動回覆常見問題。想了解怎麼運作，歡迎私訊我聊聊。</div>
+      </div>
+    </div>
+    <div class="dots"><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="fine" style="margin-top:14px">示範留言皆為系統實際生成的原文，未經修飾。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">為什麼不是每天自己蹲牆</p>
+    <div class="grid2 vs">
+      <div class="card bad">
+        <h3>自己經營</h3>
+        <ul>
+          <li>每天滑幾小時，才碰到一兩則像客人的貼文</li>
+          <li>想好留言要十分鐘，還常常詞窮</li>
+          <li>晚上、假日、忙出貨的時候：零曝光</li>
+          <li>誰回了你？翻通知翻到眼花</li>
+        </ul>
+      </div>
+      <div class="card good">
+        <h3>開自動海巡</h3>
+        <ul>
+          <li>掛著就巡，看到像你客人的才出手</li>
+          <li>留言像你本人寫的——因為它學過你</li>
+          <li>草稿模式你逐則審，全自動模式它直接發</li>
+          <li>誰回了、回了什麼、發了幾則——後台一頁看完</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">跟別家不一樣的地方</p>
+    <div class="feat">
+      <div class="card"><h3>🎭 像你，不像機器人</h3><p>先學你的口吻與立場才開巡。禁用罐頭句、每則抓貼文細節回應、長短有節奏——不是那種一眼就看穿的廣告帳號。</p></div>
+      <div class="card"><h3>🛑 有所不為</h3><p>喪親、重病、失業、心理低潮的貼文，一律不打擾——不論多像你的客群。留言是生意，也是教養。</p></div>
+      <div class="card"><h3>✋ 你永遠握著開關</h3><p>預設草稿模式：AI 擬好，你按了才發。全自動要你明確簽收才開，隨時一鍵關閉、關閉即撤銷授權。</p></div>
+      <div class="card"><h3>📒 每一則都有帳</h3><p>發了什麼、回給誰、誰回了你——後台全記錄，附原貼文連結。不會有「它替我發了什麼我不知道」。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">費用</p>
+    <div class="price">
+      <div class="card"><small>訪客試用</small><b>免費</b><small>每月 50 點・免註冊</small></div>
+      <div class="card"><small>註冊帳號</small><b>免費</b><small>每月 100 點・知識保留</small></div>
+      <div class="card hot"><small>Starter</small><b>1,000 點</b><small>每月・適合日常掛機</small></div>
+      <div class="card"><small>Pro</small><b>5,000 點</b><small>每月・多帳號高頻</small></div>
+    </div>
+    <p class="fine" style="margin-top:12px">生成一則留言 2 點、建一次人設 1 點；AI 判斷「不該留言」跳過的，不收點。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap card" style="max-width:560px;margin:0 auto">
+    <h2 style="text-align:center">三分鐘開始</h2>
+    <ol class="steps">
+      <li>到 <a href="https://chromewebstore.google.com/detail/%E5%AE%A2%E5%8A%A0%E4%BA%BA/ikaeacbpmjkaddigkhkacgnmfgohpkoi" target="_blank" rel="noopener" style="color:var(--brand)">Chrome 商店</a>安裝客加人</li>
+      <li>點右上角圖示，一鍵開通訪客帳號</li>
+      <li>打開 Threads，同意開啟海巡、讓 AI 學你</li>
+      <li>存好人設的下一秒——它已經開始替你巡了</li>
+    </ol>
+    <div class="ctarow"><a class="cta" href="https://chromewebstore.google.com/detail/%E5%AE%A2%E5%8A%A0%E4%BA%BA/ikaeacbpmjkaddigkhkacgnmfgohpkoi" target="_blank" rel="noopener">免費安裝，讓它今晚就開始巡</a></div>
+  </div>
+</section>
+
+<div class="wrap">
+  <p class="honest">誠實聲明：主動對陌生人留言，本來就比被動回覆風險高。我們把自動化足跡壓到很低，但不是零；
+  發出的每一則都如實記錄在你的後台。要不要開、開到什麼程度，永遠由你決定。</p>
+</div>
+
+<footer>
+  <div class="wrap">客加人 KJR ・ <a href="privacy.html">隱私政策</a> ・ <a href="index.html">回首頁</a></div>
+</footer>
+
+
+<section style="max-width:720px;margin:48px auto;padding:0 20px">
+  <h2 style="font-size:clamp(20px,4vw,26px);margin-bottom:20px">常見問題</h2>
+  <details style="margin-bottom:12px"><summary style="cursor:pointer;font-weight:700">Threads 可以自動留言、自動找客人嗎？</summary>
+  <p style="margin-top:8px;line-height:1.7">可以。客加人的海巡功能裝在 Chrome 擴充裡，掛機時自動瀏覽 Threads，找到像你客人的貼文、用你的口吻留言，把好奇的人引到你的主頁與私訊。留言前會先看現場其他留言避免突兀；敏感貼文（喪事、重病、爭吵）一律不打擾。若你要找的是「自己收到的訊息自動回」，客加人的客服 AI（LINE/IG/Threads 私訊）也是同一顆腦。</p></details>
+  <details style="margin-bottom:12px"><summary style="cursor:pointer;font-weight:700">小店訊息回不完怎麼辦？</summary>
+  <p style="margin-top:8px;line-height:1.7">先把最常被問的 10 個問題整理成固定答案，就能省下一半時間。剩下那半——半夜的訊息、漏接的訂單——交給客加人的 AI 自動回覆：它先掃過你的歷史對話學會你的答法，之後常見問題自動回、拿不準的留給你。</p></details>
+  <details style="margin-bottom:12px"><summary style="cursor:pointer;font-weight:700">Threads 自動留言會不會被當成廣告或機器人？</summary>
+  <p style="margin-top:8px;line-height:1.7">海巡的預設是「十則裡最多三則提到自己」，其餘全是純聊天式的留言——先當個常出現的熟面孔，才有人點進你的主頁。發文節奏也會自動配合平台限速，被限流時自動放慢。</p></details>
+  <details style="margin-bottom:12px"><summary style="cursor:pointer;font-weight:700">自動回覆需要會寫程式嗎？費用怎麼算？</summary>
+  <p style="margin-top:8px;line-height:1.7">不用寫程式：裝好 Chrome 擴充、按「同意海巡」、回答幾個關於你店的問題就會開始跑。可以免費試用，滿意再升級。</p></details>
+  <details style="margin-bottom:12px"><summary style="cursor:pointer;font-weight:700">LINE 和 IG 的訊息也能自動回嗎？</summary>
+  <p style="margin-top:8px;line-height:1.7">可以。客加人本來就是從 LINE 客服自動化開始做的——同一顆學會你口吻的 AI，管 LINE、IG、Threads 的訊息與留言。</p></details>
+</section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Threads 可以自動留言、自動找客人嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。客加人海巡掛機時自動瀏覽 Threads，找到像你客人的貼文、用你的口吻留言，把陌生人引到主頁與私訊；敏感貼文一律不打擾。"}},
+{"@type":"Question","name":"小店訊息回不完怎麼辦？","acceptedAnswer":{"@type":"Answer","text":"先整理常見問題的固定答案省一半時間；剩下的交給客加人 AI 自動回覆——先學會你的答法，常見問題自動回、拿不準的留給你。"}},
+{"@type":"Question","name":"Threads 自動留言會不會被當成廣告？","acceptedAnswer":{"@type":"Answer","text":"海巡預設十則裡最多三則提到自己，其餘是純聊天留言；發文節奏自動配合平台限速。"}},
+{"@type":"Question","name":"自動回覆需要會寫程式嗎？","acceptedAnswer":{"@type":"Answer","text":"不用。裝 Chrome 擴充、同意海巡、回答幾個關於你店的問題即可，可免費試用。"}},
+{"@type":"Question","name":"LINE 和 IG 的訊息也能自動回嗎？","acceptedAnswer":{"@type":"Answer","text":"可以，客加人從 LINE 客服自動化起家，同一顆 AI 管 LINE、IG、Threads。"}}]}
+</script>
+</body>
+</html>
